@@ -1,113 +1,121 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Truyện Tranh</title>
-    <link rel="stylesheet" href="chuyenmuc.css">
-</head>
-<body>
-
-<header>
-    <div class="header-content header-container">
+    <link rel="stylesheet" href="../css/chuyenmuc.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-content header-container">
         <div class="logo">My Books</div>
         <nav>
-            <ul>
-                <li><a href="index.html">Trang chủ</a></li>
-                <li><a href="chuyenmuc.html" class="nav-active">Sản phẩm</a></li>
-                <li><a href="#">Tin tức</a></li>
-                <li><a href="#">Liên hệ</a></li>
-            </ul>
+          <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="chuyenmuc.html" class="nav-active">Sản phẩm</a></li>
+            <li><a href="#">Tin tức</a></li>
+            <li><a href="#">Liên hệ</a></li>
+          </ul>
         </nav>
-    </div>
-</header>
+      </div>
+    </header>
 
-<div class="wrapper">
-        <aside class="sidebar">
-            <div class="sidebar-box">
-                <h3>DANH MỤC SÁCH</h3>
-                <ul class="category-list">
-                    <li><a href="chuyenmuc.html">Tất cả sản phẩm</a></li>
-                    <li><a href="sach-ky-nang.html" class="active">Sách kỹ năng</a></li>
-                    <li><a href="van-hoc-viet-nam.html" class="active">Văn học Việt Nam</a></li>
-                    <li><a href="truyen-tranh.html" class="active">Truyện tranh</a></li>
-                </ul>
-            </div>
-            <div class="sidebar-box">
-                <h3>LỌC THEO GIÁ</h3>
-                <ul>
-                    <li><input type="checkbox"> Dưới 100.000đ</li>
-                    <li><input type="checkbox"> 100.000đ - 200.000đ</li>
-                </ul>
-            </div>
-    </aside>
+    <div class="wrapper">
+      <aside class="sidebar">
+        <div class="sidebar-box">
+          <h3>DANH MỤC SÁCH</h3>
+          <ul class="category-list">
+            <li><a href="chuyenmuc.html">Tất cả sản phẩm</a></li>
+            <li><a href="sach-ky-nang.html" class="active">Sách kỹ năng</a></li>
+            <li>
+              <a href="van-hoc-viet-nam.html" class="active"
+                >Văn học Việt Nam</a
+              >
+            </li>
+            <li><a href="truyen-tranh.html" class="active">Truyện tranh</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-box">
+          <h3>LỌC THEO GIÁ</h3>
+          <ul>
+            <li><input type="checkbox" /> Dưới 100.000đ</li>
+            <li><input type="checkbox" /> 100.000đ - 200.000đ</li>
+          </ul>
+        </div>
+      </aside>
 
-
-    <main class="main-content">
+      <main class="main-content">
         <div class="section-header">
-            <h2>Truyện tranh</h2>
-            <select style="padding: 5px; border-radius: 5px;">
-                <option>Mới nhất</option>
-                <option>Giá tăng dần</option>
-            </select>
+          <h2>Truyện tranh</h2>
+          <select style="padding: 5px; border-radius: 5px">
+            <option>Mới nhất</option>
+            <option>Giá tăng dần</option>
+          </select>
         </div>
         <div class="product-grid">
-            <div class="product-item">
-                <img src="Ảnh chuyên mục/thạch sanh.webp" alt="Truyện 1">
-                <h4>Truyện Tranh Cổ Tích Việt Nam - Thạch Sanh</h4>
-                <span class="price">35.000đ</span>
-                <a href="chi-tiet.html" class="btn-view">XEM CHI TIẾT</a>
-            </div>
-            <div class="product-item">
-                <img src="Ảnh chuyên mục/chú cuội.webp" alt="Truyện 2">
-                <h4>Truyện Tranh Cổ Tích Việt Nam - Chú Cuội</h4>
-                <span class="price">35.000đ</span>
-                <a href="chi-tiet.html" class="btn-view">XEM CHI TIẾT</a>
-            </div>
-            <div class="product-item">
-                <img src="Ảnh chuyên mục/cậu bé tích chu.webp" alt="Truyện 3">
-                <h4>Truyện Tranh Cổ Tích Việt Nam - Cậu Bé Tích Chu</h4>
-                <span class="price">35.000đ</span>
-                <a href="chi-tiet.html" class="btn-view">XEM CHI TIẾT</a>
-            </div>
-            <div class="product-item">
-                <img src="Ảnh chuyên mục/tấm cám.webp" alt="Truyện 4">
-                <h4>Truyện Tranh Cổ Tích Việt Nam - Tấm Cám</h4>
-                <span class="price">45.000đ</span>
-                <a href="chi-tiet.html" class="btn-view">XEM CHI TIẾT</a>
-            </div>
-            <div class="product-item">
-                <img src="Ảnh chuyên mục/cây khế.webp" alt="Truyện 5">
-                <h4>Truyện Tranh Cổ Tích Việt Nam - Cây Khế</h4>
-                <span class="price">33.000đ</span>
-                <a href="chi-tiet.html" class="btn-view">XEM CHI TIẾT</a>
-            </div>
+          <div class="product-item">
+            <img src="Ảnh chuyên mục/thạch sanh.webp" alt="Truyện 1" />
+            <h4>Truyện Tranh Cổ Tích Việt Nam - Thạch Sanh</h4>
+            <span class="price">35.000đ</span>
+            <a href="chi-tiet.html" class="btn-view">XEM CHI TIẾT</a>
+          </div>
+          <div class="product-item">
+            <img src="Ảnh chuyên mục/chú cuội.webp" alt="Truyện 2" />
+            <h4>Truyện Tranh Cổ Tích Việt Nam - Chú Cuội</h4>
+            <span class="price">35.000đ</span>
+            <a href="chi-tiet.html" class="btn-view">XEM CHI TIẾT</a>
+          </div>
+          <div class="product-item">
+            <img src="Ảnh chuyên mục/cậu bé tích chu.webp" alt="Truyện 3" />
+            <h4>Truyện Tranh Cổ Tích Việt Nam - Cậu Bé Tích Chu</h4>
+            <span class="price">35.000đ</span>
+            <a href="chi-tiet.html" class="btn-view">XEM CHI TIẾT</a>
+          </div>
+          <div class="product-item">
+            <img src="Ảnh chuyên mục/tấm cám.webp" alt="Truyện 4" />
+            <h4>Truyện Tranh Cổ Tích Việt Nam - Tấm Cám</h4>
+            <span class="price">45.000đ</span>
+            <a href="chi-tiet.html" class="btn-view">XEM CHI TIẾT</a>
+          </div>
+          <div class="product-item">
+            <img src="Ảnh chuyên mục/cây khế.webp" alt="Truyện 5" />
+            <h4>Truyện Tranh Cổ Tích Việt Nam - Cây Khế</h4>
+            <span class="price">33.000đ</span>
+            <a href="chi-tiet.html" class="btn-view">XEM CHI TIẾT</a>
+          </div>
         </div>
-         <div class="pagination">
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">Tiếp »</a>
+        <div class="pagination">
+          <a href="#" class="active">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">Tiếp »</a>
         </div>
-    </main>
-</div>
+      </main>
+    </div>
     <footer>
-        <div class="footer-content">
-            <div>
-                <h4>SKYBOOKS VIỆT NAM</h4>
-                <p>Sứ mệnh lan tỏa tri thức Việt.</p>
-                <p>Địa chỉ: Số 123 Đống Đa, Hà Nội</p>
-            </div>
-            <div>
-                <h4>HỖ TRỢ</h4>
-                <p>Chính sách đổi trả</p>
-                <p>Hướng dẫn mua hàng</p>
-            </div>
-            <div>
-                <h4>LIÊN HỆ</h4>
-                <p>Email: hotro@skybooks.vn</p>
-                <p>Hotline: 1900 6789</p>
-            </div>
+      <div class="footer-content">
+        <div>
+          <h4>SKYBOOKS VIỆT NAM</h4>
+          <p>Sứ mệnh lan tỏa tri thức Việt.</p>
+          <p>Địa chỉ: Số 123 Đống Đa, Hà Nội</p>
         </div>
+        <div>
+          <h4>HỖ TRỢ</h4>
+          <p>Chính sách đổi trả</p>
+          <p>Hướng dẫn mua hàng</p>
+        </div>
+        <div>
+          <h4>LIÊN HỆ</h4>
+          <p>Email: hotro@skybooks.vn</p>
+          <p>Hotline: 1900 6789</p>
+        </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
