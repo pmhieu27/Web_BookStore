@@ -31,13 +31,8 @@
   color: #4fc3f7;
   font-size: 26px;
   margin-bottom: 15px;
-  display:flex;
-  gap:10px;
 }
-.logo img{
-  height: 30px;
-  width: auto;
-}
+
 .footer-col h3 {
   color: #4fc3f7;
   margin-bottom: 15px;
