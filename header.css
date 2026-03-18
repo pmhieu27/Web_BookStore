@@ -103,7 +103,6 @@
   justify-content: space-between;
   align-items: center;
 }
-
 .menu li {
   position: relative;
   cursor: pointer;
@@ -116,6 +115,10 @@
 .emoji{
   font-size: 18px;
   margin-right: 6px;
+}
+a{
+  color: black;        /* bỏ màu xanh */
+  text-decoration: none; /* bỏ gạch chân */
 }
 /* HOVER */
 .menu li:hover {
