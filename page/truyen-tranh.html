@@ -13,16 +13,90 @@
   </head>
   <body>
     <header>
-      <div class="header-content header-container">
-        <div class="logo">My Books</div>
-        <nav>
-          <ul>
-            <li><a href="index.html">Trang chủ</a></li>
-            <li><a href="chuyenmuc.html" class="nav-active">Sản phẩm</a></li>
-            <li><a href="#">Tin tức</a></li>
-            <li><a href="#">Liên hệ</a></li>
+      <div class="header-top">
+        <div class="container-navbar header-flex">
+          <!-- LOGO -->
+          <div class="logo">
+            <img src="../img/logo.jpg" alt="logo" />
+            <span>VƯỜN SÁCH THƠ</span>
+          </div>
+
+          <!-- SEARCH -->
+          <div class="search-box">
+            <input type="text" placeholder="Tìm kiếm sản phẩm..." />
+            <i class="fa fa-search"></i>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="header-right">
+            <div class="item">
+              <i class="fa fa-phone"></i>
+              <div>
+                <b>19006656</b><br />
+                <span>Hỗ trợ khách hàng</span>
+              </div>
+            </div>
+
+            <div class="item">
+              <i class="fa fa-user"></i>
+              <div>
+                <b>Đăng nhập</b><br />
+                <span>Đăng ký</span>
+              </div>
+            </div>
+
+            <div class="item cart">
+              <i class="fa fa-shopping-cart"></i>
+              <span class="badge">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MENU -->
+      <div class="menu-bar">
+        <div class="container-navbar">
+          <ul class="menu">
+            <li>
+              <span class="emoji">🏠</span
+              ><a href="../page/home.html">Trang chủ</a>
+            </li>
+
+            <li><i class="fa fa-info-circle"></i> Về chúng tôi</li>
+
+            <!-- DROPDOWN -->
+            <li class="dropdown">
+              <label for="book-toggle">
+                <span class="emoji">📚</span
+                ><a href="../page/chuyenmuc.html">Chuyên mục sách</a>
+                <i class="fa fa-caret-down"></i>
+              </label>
+              <input type="checkbox" id="book-toggle" />
+
+              <ul class="submenu">
+                <li><a href=""></a>Sách lịch sử</li>
+                <li><a href="sach-ky-nang.html">Sách kỹ năng</a></li>
+                <li><a href="truyen-tranh.html">Sách truyện</a></li>
+                <li>Sách luyện đề</li>
+              </ul>
+            </li>
+
+            <!-- DROPDOWN -->
+            <li class="dropdown">
+              <label for="news-toggle">
+                <span class="emoji">📰</span>Tin tức và sự kiện
+                <i class="fa fa-caret-down"></i>
+              </label>
+              <input type="checkbox" id="news-toggle" />
+
+              <ul class="submenu">
+                <li>Tin báo chí</li>
+                <li>Sự kiện</li>
+              </ul>
+            </li>
+            <li><i class="fa fa-phone"></i> Liên hệ</li>
           </ul>
-        </nav>
+        </div>
       </div>
     </header>
 
@@ -58,38 +132,39 @@
             <option>Giá tăng dần</option>
           </select>
         </div>
-        <div class="product-grid">
-          <div class="product-item">
-            <img src="Ảnh chuyên mục/thạch sanh.webp" alt="Truyện 1" />
+        <div class="product-item">
+            <img src="../img/Ảnh chuyên mục/thạch sanh.webp" alt="Truyện 1" />
             <h4>Truyện Tranh Cổ Tích Việt Nam - Thạch Sanh</h4>
             <span class="price">35.000đ</span>
             <a href="chi-tiet.html" class="btn-view">XEM CHI TIẾT</a>
           </div>
           <div class="product-item">
-            <img src="Ảnh chuyên mục/chú cuội.webp" alt="Truyện 2" />
+            <img src="../img/Ảnh chuyên mục/chú cuội.webp" alt="Truyện 2" />
             <h4>Truyện Tranh Cổ Tích Việt Nam - Chú Cuội</h4>
             <span class="price">35.000đ</span>
             <a href="chi-tiet.html" class="btn-view">XEM CHI TIẾT</a>
           </div>
           <div class="product-item">
-            <img src="Ảnh chuyên mục/cậu bé tích chu.webp" alt="Truyện 3" />
+            <img
+              src="../img/Ảnh chuyên mục/cậu bé tích chu.webp"
+              alt="Truyện 3"
+            />
             <h4>Truyện Tranh Cổ Tích Việt Nam - Cậu Bé Tích Chu</h4>
             <span class="price">35.000đ</span>
             <a href="chi-tiet.html" class="btn-view">XEM CHI TIẾT</a>
           </div>
           <div class="product-item">
-            <img src="Ảnh chuyên mục/tấm cám.webp" alt="Truyện 4" />
+            <img src="../img/Ảnh chuyên mục/tấm cám.webp" alt="Truyện 4" />
             <h4>Truyện Tranh Cổ Tích Việt Nam - Tấm Cám</h4>
             <span class="price">45.000đ</span>
             <a href="chi-tiet.html" class="btn-view">XEM CHI TIẾT</a>
           </div>
           <div class="product-item">
-            <img src="Ảnh chuyên mục/cây khế.webp" alt="Truyện 5" />
+            <img src="../img/Ảnh chuyên mục/cây khế.webp" alt="Truyện 5" />
             <h4>Truyện Tranh Cổ Tích Việt Nam - Cây Khế</h4>
             <span class="price">33.000đ</span>
             <a href="chi-tiet.html" class="btn-view">XEM CHI TIẾT</a>
           </div>
-        </div>
         <div class="pagination">
           <a href="#" class="active">1</a>
           <a href="#">2</a>
@@ -99,23 +174,55 @@
       </main>
     </div>
     <footer>
-      <div class="footer-content">
-        <div>
-          <h4>SKYBOOKS VIỆT NAM</h4>
-          <p>Sứ mệnh lan tỏa tri thức Việt.</p>
-          <p>Địa chỉ: Số 123 Đống Đa, Hà Nội</p>
+      <div class="footer-container">
+        <!-- Cột 1 -->
+        <div class="footer-col">
+          <h2 class="logo"><img src="../img/logo.jpg" /> VƯỜN SÁCH THƠ</h2>
+          <p>
+            Vườn Sách Thơ - nơi dành cho những người yêu sách, đam mê văn
+            chương, khám phá tri thức và nuôi dưỡng tâm hồn qua từng trang sách.
+          </p>
+
+          <div class="social">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-youtube"></i>
+            <i class="fa fa-shopping-bag"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-tiktok"></i>
+          </div>
         </div>
-        <div>
-          <h4>HỖ TRỢ</h4>
-          <p>Chính sách đổi trả</p>
-          <p>Hướng dẫn mua hàng</p>
+
+        <!-- Cột 2 -->
+        <div class="footer-col">
+          <h3>LIÊN HỆ VỚI CHÚNG TÔI</h3>
+
+          <p>
+            <i class="fa fa-map-marker"></i>
+            Số 12, Chùa Bộc, Đống Đa, Hai Bà Trưng, Hà Nội
+          </p>
+
+          <!-- PHONE GROUP -->
+          <div class="phone">
+            <i class="fa fa-phone"></i>
+            <div>
+              <p>Hotline kinh doanh: 0123456789</p>
+              <p>Hotline giao hàng: 0987654321</p>
+            </div>
+          </div>
         </div>
-        <div>
-          <h4>LIÊN HỆ</h4>
-          <p>Email: hotro@skybooks.vn</p>
-          <p>Hotline: 1900 6789</p>
+
+        <!-- Cột 3 -->
+        <div class="footer-col">
+          <h3>ĐĂNG KÝ NHẬN KHUYẾN MÃI</h3>
+          <p>Đừng bỏ lỡ những chương trình hấp dẫn</p>
+
+          <div class="subscribe">
+            <input type="email" placeholder="Gửi tới Vườn Email của bạn nha" />
+            <button>ĐĂNG KÝ</button>
+          </div>
         </div>
       </div>
+      <div class="footer-bottom">© Bản quyền thuộc về Vườn Sách Thơ</div>
     </footer>
   </body>
 </html>
