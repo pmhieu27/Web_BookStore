@@ -18,12 +18,12 @@ a {
 }
 
 /* Container chứa nội dung (Căn giữa và giới hạn độ rộng) */
-.container {
+.container-cm {
   width: 1200px;
   margin: 0 auto;
   display: flex;
   gap: 30px;
-  padding: 20px 20px;
+  padding: 20px;
 }
 
 /* LAYOUT CHÍNH */
@@ -31,9 +31,8 @@ a {
   max-width: 1200px;
   margin: 0px auto;
   display: flex; /* Đưa Sidebar và Main vào một hàng */
-  align-items: flex-start; /* Giữ sidebar ở trên đầu */
   gap: 30px; /* Khoảng cách giữa sidebar và nội dung */
-  padding-bottom: 50px;
+  padding: 20px;
 }
 
 /* SIDEBAR (Phân loại chuyên mục) */
@@ -117,10 +116,16 @@ a {
 .product-item h4 {
   font-size: 14px;
   margin-bottom: 10px;
-  height: 35px;
+  height: 40px;
   overflow: hidden;
   color: #2c3e50;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
+
 .price {
   color: #e74c3c;
   font-weight: bold;

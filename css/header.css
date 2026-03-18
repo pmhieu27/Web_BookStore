@@ -121,7 +121,7 @@ a {
   text-decoration: none; /* bỏ gạch chân */
 }
 /* HOVER */
-.menu li:hover {
+.menu li a:hover {
   color: #2a7de1;
 }
 
