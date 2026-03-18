@@ -1,0 +1,160 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  color: #333333;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+:root {
+  --black: #333333;
+  --price: #ff0000ac;
+  --hover: #007bff;
+}
+
+.container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "banner"
+    "main"
+    "footer";
+}
+
+/* HEADER */
+
+header {
+  grid-area: header;
+  background-color: #dcdcdcac;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.navbar {
+  background-color: #333333;
+  width: 100%;
+  height: 100px;
+}
+
+/* BANNER */
+banner {
+  grid-area: banner;
+  background-color: #6d6d6d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 350px;
+}
+
+/* MAIN */
+main {
+  grid-area: main;
+  padding: 0 0 32px;
+  background-color: #ffffff;
+}
+
+.sec-new-book {
+  background-color: #c7e9fb;
+}
+
+h2 {
+  text-align: center;
+  color: #333333;
+  margin-top: 20px;
+  font-size: 32px;
+  padding-top: 24px;
+}
+
+.category-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px;
+  max-width: 100%;
+}
+
+/* block item */
+
+.book-item {
+  flex: 0 0 300px;
+  max-width: 300px;
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.img-book,
+.img-book > div {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+}
+
+.img-book img {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+.book-title {
+  font-size: 20px;
+  line-height: 1.4;
+  color: #333;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.book-price {
+  font-size: 24px;
+  color: var(--price);
+  font-weight: bold;
+}
+
+.book-title:hover {
+  color: var(--hover);
+  cursor: pointer;
+}
+
+.book-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-item:hover {
+  transform: translateY(-5px); /* Nhấc nhẹ ô sách lên */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Đổ bóng mịn */
+  cursor: pointer;
+}
+
+/* FOOTER */
+.footer {
+  grid-area: footer;
+  background-color: #333333;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+}
