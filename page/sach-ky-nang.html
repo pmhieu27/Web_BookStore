@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sách kỹ năng</title>
+    <link rel="stylesheet" href="../css/chuyenmuc.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-top">
+        <div class="container-navbar header-flex">
+          <!-- LOGO -->
+          <div class="logo">
+            <img src="../img/logo.jpg" alt="logo" />
+            <span>VƯỜN SÁCH THƠ</span>
+          </div>
+
+          <!-- SEARCH -->
+          <div class="search-box">
+            <input type="text" placeholder="Tìm kiếm sản phẩm..." />
+            <i class="fa fa-search"></i>
+          </div>
+
+          <!-- RIGHT -->
+          <div class="header-right">
+            <div class="item">
+              <i class="fa fa-phone"></i>
+              <div>
+                <b>19006656</b><br />
+                <span>Hỗ trợ khách hàng</span>
+              </div>
+            </div>
+
+            <div class="item">
+              <i class="fa fa-user"></i>
+              <div>
+                <b>Đăng nhập</b><br />
+                <span>Đăng ký</span>
+              </div>
+            </div>
+
+            <div class="item cart">
+              <i class="fa fa-shopping-cart"></i>
+              <span class="badge">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MENU -->
+      <div class="menu-bar">
+        <div class="container-navbar">
+          <ul class="menu">
+            <li>
+              <span class="emoji">🏠</span
+              ><a href="../page/home.html">Trang chủ</a>
+            </li>
+
+            <li><i class="fa fa-info-circle"></i> Về chúng tôi</li>
+
+            <!-- DROPDOWN -->
+            <li class="dropdown">
+              <label for="book-toggle">
+                <span class="emoji">📚</span
+                ><a href="../page/chuyenmuc.html">Chuyên mục sách</a>
+                <i class="fa fa-caret-down"></i>
+              </label>
+              <input type="checkbox" id="book-toggle" />
+
+              <ul class="submenu">
+                <li>Sách lịch sử</li>
+                <li>Sách kỹ năng</li>
+                <li>Sách truyện</li>
+                <li>Sách luyện đề</li>
+              </ul>
+            </li>
+
+            <!-- DROPDOWN -->
+            <li class="dropdown">
+              <label for="news-toggle">
+                <span class="emoji">📰</span>Tin tức và sự kiện
+                <i class="fa fa-caret-down"></i>
+              </label>
+              <input type="checkbox" id="news-toggle" />
+
+              <ul class="submenu">
+                <li>Tin báo chí</li>
+                <li>Sự kiện</li>
+              </ul>
+            </li>
+            <li><i class="fa fa-phone"></i> Liên hệ</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <div class="wrapper">
+      <aside class="sidebar">
+        <div class="sidebar-box">
+          <h3>DANH MỤC SÁCH</h3>
+          <ul class="category-list">
+            <li><a href="chuyenmuc.html">Tất cả sản phẩm</a></li>
+            <li><a href="sach-ky-nang.html" class="active">Sách kỹ năng</a></li>
+            <li><a href="van-hoc-viet-nam.html">Văn học Việt Nam</a></li>
+            <li><a href="truyen-tranh.html">Truyện tranh</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-box">
+          <h3>LỌC THEO GIÁ</h3>
+          <ul>
+            <li><input type="checkbox" /> Dưới 100.000đ</li>
+            <li><input type="checkbox" /> 100.000đ - 200.000đ</li>
+          </ul>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <div class="section-header">
+          <h2>Sách kỹ năng</h2>
+          <select style="padding: 5px; border-radius: 5px">
+            <option>Mới nhất</option>
+            <option>Giá tăng dần</option>
+          </select>
+        </div>
+        <div class="product-grid">
+          <div class="product-item">
+            <img
+              src="Ảnh chuyên mục/ăn nói khéo sẽ có được thiên hạ.webp"
+              alt="Sách 1"
+            />
+            <h4>Khéo Ăn Nói Sẽ Có Được Thiên Hạ</h4>
+            <span class="price">125.000đ</span>
+            <a href="chi-tiet.html" class="btn-view">XEM CHI TIẾT</a>
+          </div>
+          <div class="product-item">
+            <img
+              src="Ảnh chuyên mục/con đường chẳng mấy ai đi.webp"
+              alt="Sách 2"
+            />
+            <h4>Con Đường Chẳng Mấy Ai Đi</h4>
+            <span class="price">99.000đ</span>
+            <a href="chi-tiet.html" class="btn-view">XEM CHI TIẾT</a>
+          </div>
+          <div class="product-item">
+            <img
+              src="Ảnh chuyên mục/Phương Pháp Đặt Câu Hỏi Của Socrates.webp"
+              alt="Sách 3"
+            />
+            <h4>Phương Pháp Đặt Câu Hỏi Của Socrates</h4>
+            <span class="price">150.000đ</span>
+            <a href="chi-tiet.html" class="btn-view">XEM CHI TIẾT</a>
+          </div>
+          <div class="product-item">
+            <img
+              src="Ảnh chuyên mục/Stop Overthinking - Sống Tự Do, Không Âu Lo - 7 Bước Loại Bỏ Suy Nghĩ Tiêu Cực Và Bắt Đầu Suy Nghĩ Tích Cực.webp"
+              alt="Sách 4"
+            />
+            <h4>
+              Stop Overthinking - Sống Tự Do, Không Âu Lo - 7 Bước Loại Bỏ Suy
+              Nghĩ Tiêu Cực Và Bắt Đầu Suy Nghĩ Tích Cực
+            </h4>
+            <span class="price">110.000đ</span>
+            <a href="chi-tiet.html" class="btn-view">XEM CHI TIẾT</a>
+          </div>
+          <div class="product-item">
+            <img
+              src="Ảnh chuyên mục/Sức Hút Của Sự Tử Tế - Sống Nhân Ái, Tâm Thư Thái.webp"
+              alt="Sách 5"
+            />
+            <h4>Sức Hút Của Sự Tử Tế - Sống Nhân Ái, Tâm Thư Thái</h4>
+            <span class="price">88.000đ</span>
+            <a href="chi-tiet.html" class="btn-view">XEM CHI TIẾT</a>
+          </div>
+        </div>
+        <div class="pagination">
+          <a href="#" class="active">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">Tiếp »</a>
+        </div>
+      </main>
+    </div>
+    <footer>
+      <div class="footer-container">
+        <!-- Cột 1 -->
+        <div class="footer-col">
+          <h2 class="logo"><img src="../img/logo.jpg" /> VƯỜN SÁCH THƠ</h2>
+          <p>
+            Vườn Sách Thơ - nơi dành cho những người yêu sách, đam mê văn
+            chương, khám phá tri thức và nuôi dưỡng tâm hồn qua từng trang sách.
+          </p>
+
+          <div class="social">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-youtube"></i>
+            <i class="fa fa-shopping-bag"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-tiktok"></i>
+          </div>
+        </div>
+
+        <!-- Cột 2 -->
+        <div class="footer-col">
+          <h3>LIÊN HỆ VỚI CHÚNG TÔI</h3>
+
+          <p>
+            <i class="fa fa-map-marker"></i>
+            Số 12, Chùa Bộc, Đống Đa, Hai Bà Trưng, Hà Nội
+          </p>
+
+          <!-- PHONE GROUP -->
+          <div class="phone">
+            <i class="fa fa-phone"></i>
+            <div>
+              <p>Hotline kinh doanh: 0123456789</p>
+              <p>Hotline giao hàng: 0987654321</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cột 3 -->
+        <div class="footer-col">
+          <h3>ĐĂNG KÝ NHẬN KHUYẾN MÃI</h3>
+          <p>Đừng bỏ lỡ những chương trình hấp dẫn</p>
+
+          <div class="subscribe">
+            <input type="email" placeholder="Gửi tới Vườn Email của bạn nha" />
+            <button>ĐĂNG KÝ</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">© Bản quyền thuộc về Vườn Sách Thơ</div>
+    </footer>
+  </body>
+</html>
