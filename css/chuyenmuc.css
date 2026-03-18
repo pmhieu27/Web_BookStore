@@ -1,0 +1,177 @@
+/* CSS RESET & CHUNG */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  background-color: #fcfcfc;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Container chứa nội dung (Căn giữa và giới hạn độ rộng) */
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 30px;
+  padding: 20px 20px;
+}
+
+/* LAYOUT CHÍNH */
+.wrapper {
+  max-width: 1200px;
+  margin: 0px auto;
+  display: flex; /* Đưa Sidebar và Main vào một hàng */
+  align-items: flex-start; /* Giữ sidebar ở trên đầu */
+  gap: 30px; /* Khoảng cách giữa sidebar và nội dung */
+  padding-bottom: 50px;
+}
+
+/* SIDEBAR (Phân loại chuyên mục) */
+.sidebar {
+  width: 25%;
+}
+
+.sidebar-box {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.sidebar-box h3 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #27ae60;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.sidebar-box ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 14px;
+}
+
+.sidebar-box ul li a:hover {
+  color: #27ae60;
+  padding-left: 5px;
+  transition: 0.3s;
+}
+
+.cat-active {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  width: 75%;
+}
+.category-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #444;
+  border-left: 5px solid #27ae60;
+  padding-left: 15px;
+}
+
+/* GRID SẢN PHẨM (Xếp hàng ngang/dọc) */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+.product-item {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 15px;
+  transition: 0.3s;
+  text-align: center;
+  border-radius: 4px;
+}
+.product-item:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+/* Chèn ảnh từ file bạn gửi */
+.product-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border-radius: 2px;
+}
+.product-item h4 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  height: 35px;
+  overflow: hidden;
+  color: #2c3e50;
+}
+.price {
+  color: #e74c3c;
+  font-weight: bold;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 10px;
+}
+.btn-view {
+  display: inline-block;
+  border: 1px solid #27ae60;
+  color: #27ae60;
+  padding: 6px 15px;
+  font-size: 12px;
+  border-radius: 3px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.btn-view:hover {
+  background: #27ae60;
+  color: #fff;
+}
+
+/* PHÂN TRANG (Tiêu chí 5) */
+.pagination {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.pagination a {
+  padding: 8px 15px;
+  border: 1px solid #ddd;
+  background: #fff;
+  font-size: 14px;
+}
+.pagination a.active {
+  background: #27ae60;
+  color: #fff;
+  border-color: #27ae60;
+}
+.pagination a:hover:not(.active) {
+  background: #f0f0f0;
+}
+
+/* FOOTER */
+footer {
+  background: url("footer-bg.jpg") no-repeat center/cover;
+  background-color: #004793;
+  color: #ffffff;
+  text-align: center;
+  padding: 50px 0 20px;
+  position: relative;
+  font-family: Arial, sans-serif;
+}
