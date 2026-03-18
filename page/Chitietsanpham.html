@@ -1,86 +1,138 @@
 <!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
     <title>Chi tiết sách</title>
-    <link rel="stylesheet" href="../css/Chitietsanpham.css" />
-  </head>
-  <body>
-    <div class="container">
-      <!-- PHẦN TRÊN -->
-      <div class="product-top">
+    <link rel="stylesheet" href="../css/Chitietsanpham.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- PHẦN TRÊN -->
+    <div class="product-top">
+
         <!-- ẢNH -->
         <div class="product-image">
-          <img src="../img/Thương gửi thế gian.jpg" alt="Sách" />
+            <img src="../img/Thương gửi thế gian.jpg" alt="Sách">
         </div>
 
         <!-- THÔNG TIN -->
         <div class="product-info">
-          <h1>THƯƠNG GỬI THẾ GIAN</h1>
 
-          <table>
-            <tr>
-              <td>Tác giả</td>
-              <td>Meia Geddes</td>
-            </tr>
-            <tr>
-              <td>Người dịch</td>
-              <td>lililiiowo</td>
-            </tr>
-            <tr>
-              <td>NXB</td>
-              <td>Phụ Nữ Việt Nam</td>
-            </tr>
-            <tr>
-              <td>Năm XB</td>
-              <td>2025</td>
-            </tr>
-            <tr>
-              <td>Ngôn ngữ</td>
-              <td>Tiếng Việt</td>
-            </tr>
-            <tr>
-              <td>Số trang</td>
-              <td>264</td>
-            </tr>
-          </table>
+            <h1>THƯƠNG GỬI THẾ GIAN</h1>
 
-          <!-- GIÁ -->
-          <p class="price">120.000đ</p>
+            <table>
+                <tr>
+                    <td>Tác giả</td>
+                    <td>Meia Geddes</td>
+                </tr>
+                <tr>
+                    <td>Người dịch</td>
+                    <td>lililiiowo</td>
+                </tr>
+                <tr>
+                    <td>NXB</td>
+                    <td>Phụ Nữ Việt Nam</td>
+                </tr>
+                <tr>
+                    <td>Năm XB</td>
+                    <td>2025</td>
+                </tr>
+                <tr>
+                    <td>Ngôn ngữ</td>
+                    <td>Tiếng Việt</td>
+                </tr>
+                <tr>
+                    <td>Số trang</td>
+                    <td>264</td>
+                </tr>
+            </table>
 
-          <!-- NÚT -->
-          <div class="buttons">
-            <button class="buy">Mua ngay</button>
-            <button class="cart">Thêm vào giỏ</button>
-            <button class="contact">Liên hệ</button>
-          </div>
-        </div>
-      </div>
+            <!-- GIÁ -->
+            <p class="price">120.000đ</p>
 
-      <!-- MÔ TẢ -->
-      <div class="description">
-        <h2>MÔ TẢ SẢN PHẨM</h2>
+            <!-- NÚT -->
+           <div class="quantity-wrapper">
+    <span class="label">Số lượng:</span>
 
-        <p>
-          “Thương gửi Thế gian - Love Letters to the World” là tuyển tập 120 lá
-          thư, chứa đựng những cảm xúc chân thành gửi đến thế giới.
-        </p>
-
-        <p>
-          “Tôi muốn sống thật đẹp đẽ, giống như một bức họa với những nét cọ
-          tinh tế...”
-        </p>
-
-        <p>
-          Cuốn sách được trình bày song ngữ Anh - Việt, giúp người đọc vừa
-          thưởng thức vẻ đẹp của ngôn từ, vừa suy ngẫm về cuộc sống.
-        </p>
-
-        <p>
-          Mỗi trang sách là một nhịp thở nhẹ nhàng, chạm đến những cảm xúc sâu
-          lắng nhất của tâm hồn.
-        </p>
-      </div>
+    <div class="quantity">
+        <button onclick="decrease()">-</button>
+        <input type="text" id="qty" value="1">
+        <button onclick="increase()">+</button>
     </div>
-  </body>
+</div>
+            <div class="buttons">
+                <button class="buy">Mua ngay</button>
+                <button class="cart">Thêm vào giỏ</button>
+                <button class="contact">Liên hệ</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- MÔ TẢ -->
+   <div class="description">
+    <h2>MÔ TẢ SẢN PHẨM</h2>
+
+    <p>
+        “Thương gửi Thế gian - Love Letters to the World” của Meia Geddes là tuyển tập 120 lá tình thư - 
+        đôi khi không chỉ viết cho người ta thương nhất mà còn là những tâm sự, cảm xúc chân thật ta dành cho 
+        chính mình và cho cả thế gian rộng lớn ngoài kia.
+    </p>
+
+    <p class="quote">
+        “Tôi muốn sống thật đẹp đẽ, giống như một bức họa với những nét cọ tinh tế, giống như người…”
+    </p>
+
+    <p class="quote en">
+        “I want to live beautifully, like a painting, in subtle brushstrokes, like you…”
+    </p>
+
+    <p>
+        “Thương gửi Thế gian - Love Letters to the World” được trình bày dưới dạng song ngữ Anh - Việt, 
+        giúp người đọc vừa thưởng thức vẻ đẹp của ngôn từ, vừa lắng lại để nghiền ngẫm về ý niệm về văn thơ 
+        và cảm xúc trong cả hai ngôn ngữ.
+    </p>
+
+    <p>
+        Mỗi lá thư là một nhịp thở nhẹ nhàng chạm đến tầng sâu nhất của tâm hồn - nơi ta cảm nhận rõ hơn 
+        về sự tồn tại, nỗi cô đơn và những suy tư mơ hồ đầy lãng mạn mà sâu lắng về cuộc sống.
+    </p>
+
+    <p>
+        Qua những dòng chữ nhẹ như gió thoảng và đầy tinh tế, trong trẻo của tác giả Meia Geddes, 
+        cuốn sách sẽ dẫn lối ta trong hành trình khám phá những cung bậc cảm xúc khi yêu và được yêu.
+    </p>
+
+    <p>
+        Những rung động mong manh, sâu sắc, đầy dịu dàng mà cũng không kém phần mạnh mẽ. 
+        Qua đó ta học cách yêu lấy chính mình, tin vào những điều tử tế và mở lòng đón nhận tình yêu.
+    </p>
+
+    <p>
+        Đọc từng trang thư, bạn sẽ được gặp lại một phiên bản khác của chính mình nhưng dịu dàng hơn, 
+        nhạy cảm hơn, thấu hiểu hơn.
+    </p>
+
+    <p>
+        Mỗi lá thư là một mảnh ghép của cảm xúc, để rồi khi gấp lại trang cuối, ta bỗng nhận ra: 
+        ta cũng yêu thế giới này theo cách rất riêng, rất lặng lẽ và rất đỗi chân thành.
+    </p>
+
+    <p>
+        “Thương gửi Thế gian - Love Letters to the World” sẽ là người bạn đáng yêu cùng bạn đi qua 
+        những ngày đẹp trời và cả những ngày chẳng có gì ngoài một trái tim cần được yêu thương.
+    </p>
+
+    <p class="ending">
+        Và mong rằng giữa thế gian rộng lớn này, mỗi chúng ta đều sẽ gặp được một người sẵn lòng gửi tặng 
+        ta hàng vạn lá thư tình viết bằng vạn thương yêu…
+    </p>
+
+</div>
+</div>
+</div>
+</body>
 </html>
