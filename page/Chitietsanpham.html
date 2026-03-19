@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chi tiết sách</title>
+    <link rel="stylesheet" href="../css/Chitietsanpham.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-top">
+          <div class="container-navbar header-flex">
+            <div class="logo">
+              <img src="../img/logo.jpg" alt="logo" />
+              <span>VƯỜN SÁCH THƠ</span>
+            </div>
+
+            <div class="search-box">
+              <input type="text" placeholder="Tìm kiếm sản phẩm..." />
+              <i class="fa fa-search"></i>
+            </div>
+
+            <div class="header-right">
+              <div class="item">
+                <i class="fa fa-phone"></i>
+                <div>
+                  <b>19006656</b><br />
+                  <span>Hỗ trợ khách hàng</span>
+                </div>
+              </div>
+
+              <div class="item">
+                <i class="fa fa-user"></i>
+                <div>
+                  <b>Đăng nhập</b><br />
+                  <span>Đăng ký</span>
+                </div>
+              </div>
+
+              <div class="item cart">
+                <i class="fa fa-shopping-cart"></i>
+                <span class="badge">0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="menu-bar">
+          <div class="container-navbar">
+            <ul class="menu">
+              <li><span class="emoji">🏠</span>Trang chủ</li>
+              <li><i class="fa fa-info-circle"></i> Về chúng tôi</li>
+
+              <li class="dropdown">
+                <label for="book-toggle">
+                  <span class="emoji">📚</span>Chuyên mục sách
+                  <i class="fa fa-caret-down"></i>
+                </label>
+                <input type="checkbox" id="book-toggle" />
+                <ul class="submenu">
+                  <li>Sách lịch sử</li>
+                  <li>Sách kỹ năng</li>
+                  <li>Sách truyện</li>
+                  <li>Sách luyện đề</li>
+                </ul>
+              </li>
+
+              <li class="dropdown">
+                <label for="news-toggle">
+                  <span class="emoji">📰</span>Tin tức và sự kiện
+                  <i class="fa fa-caret-down"></i>
+                </label>
+                <input type="checkbox" id="news-toggle" />
+                <ul class="submenu">
+                  <li>Tin báo chí</li>
+                  <li>Sự kiện</li>
+                </ul>
+              </li>
+              <li><i class="fa fa-phone"></i> Liên hệ</li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="product-top">
+          <div class="product-image">
+            <img
+              src="../img/Thương gửi thế gian.jpg"
+              alt="Sách Thương gửi thế gian - Meia Geddes"
+            />
+          </div>
+
+          <div class="product-info">
+            <h1>THƯƠNG GỬI THẾ GIAN</h1>
+
+            <table class="info-table">
+              <tr>
+                <td>Tác giả</td>
+                <td><strong>Meia Geddes</strong></td>
+              </tr>
+              <tr>
+                <td>Người dịch</td>
+                <td>lililiiowo</td>
+              </tr>
+              <tr>
+                <td>NXB</td>
+                <td>Phụ Nữ Việt Nam</td>
+              </tr>
+              <tr>
+                <td>Năm XB</td>
+                <td>2025</td>
+              </tr>
+              <tr>
+                <td>Ngôn ngữ</td>
+                <td>Tiếng Việt</td>
+              </tr>
+              <tr>
+                <td>Số trang</td>
+                <td>264</td>
+              </tr>
+            </table>
+
+            <p class="price">120.000đ</p>
+
+            <div class="quantity-wrapper">
+              <span class="label">Số lượng:</span>
+              <div class="quantity">
+                <button type="button" onclick="decrease()">-</button>
+                <input type="number" id="qty" value="1" min="1" />
+                <button type="button" onclick="increase()">+</button>
+              </div>
+            </div>
+
+            <div class="buttons">
+              <button class="btn buy">Mua ngay</button>
+              <button class="btn cart">Thêm vào giỏ</button>
+              <button class="btn contact">Liên hệ</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="description">
+          <h2>MÔ TẢ SẢN PHẨM</h2>
+
+          <article>
+            <p>
+              “Thương gửi Thế gian - Love Letters to the World” của Meia Geddes
+              là tuyển tập 120 lá tình thư...
+            </p>
+
+            <p>
+              “Tôi muốn sống thật đẹp đẽ, giống như một bức họa với những nét cọ
+              tinh tế, giống như người…”
+            </p>
+
+            <p>
+              “I want to live beautifully, like a painting, in subtle
+              brushstrokes, like you…”
+            </p>
+
+            <p>
+              “Thương gửi Thế gian” được trình bày dưới dạng song ngữ Anh -
+              Việt...
+            </p>
+            <p>
+              Mỗi lá thư là một nhịp thở nhẹ nhàng chạm đến tầng sâu nhất của
+              tâm hồn...
+            </p>
+            <p>
+              Qua những dòng chữ nhẹ như gió thoảng và đầy tinh tế, cuốn sách sẽ
+              dẫn lối ta...
+            </p>
+            <p>
+              Những rung động mong manh, sâu sắc, đầy dịu dàng mà cũng không kém
+              phần mạnh mẽ...
+            </p>
+            <p>
+              Đọc từng trang thư, bạn sẽ được gặp lại một phiên bản khác của
+              chính mình...
+            </p>
+            <p>
+              Mỗi lá thư là một mảnh ghép của cảm xúc, để rồi khi gấp lại trang
+              cuối...
+            </p>
+            <p>
+              “Thương gửi Thế gian” sẽ là người bạn đáng yêu cùng bạn đi qua
+              những ngày đẹp trời...
+            </p>
+
+            <p class="ending">
+              Và mong rằng giữa thế gian rộng lớn này, mỗi chúng ta đều sẽ gặp
+              được một người...
+            </p>
+          </article>
+        </section>
+      </main>
+
+      <footer>
+        <div class="footer-container">
+          <!-- Cột 1 -->
+          <div class="footer-col">
+            <h2 class="logo"><img src="../img/logo.jpg" /> VƯỜN SÁCH THƠ</h2>
+            <p>
+              Vườn Sách Thơ - nơi dành cho những người yêu sách, đam mê văn
+              chương, khám phá tri thức và nuôi dưỡng tâm hồn qua từng trang
+              sách.
+            </p>
+
+            <div class="social">
+              <i class="fab fa-facebook"></i>
+              <i class="fab fa-youtube"></i>
+              <i class="fa fa-shopping-bag"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-tiktok"></i>
+            </div>
+          </div>
+
+          <!-- Cột 2 -->
+          <div class="footer-col">
+            <h3>LIÊN HỆ VỚI CHÚNG TÔI</h3>
+
+            <p>
+              <i class="fa fa-map-marker"></i>
+              Số 12, Chùa Bộc, Đống Đa, Hai Bà Trưng, Hà Nội
+            </p>
+
+            <!-- PHONE GROUP -->
+            <div class="phone">
+              <i class="fa fa-phone"></i>
+              <div>
+                <p>Hotline kinh doanh: 0123456789</p>
+                <p>Hotline giao hàng: 0987654321</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cột 3 -->
+          <div class="footer-col">
+            <h3>ĐĂNG KÝ NHẬN KHUYẾN MÃI</h3>
+            <p>Đừng bỏ lỡ những chương trình hấp dẫn</p>
+
+            <div class="subscribe">
+              <input
+                type="email"
+                placeholder="Gửi tới Vườn Email của bạn nha"
+              />
+              <button>ĐĂNG KÝ</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">© Bản quyền thuộc về Vườn Sách Thơ</div>
+      </footer>
+    </div>
+  </body>
+</html>
