@@ -16,16 +16,19 @@
       <header>
         <div class="header-top">
           <div class="container-navbar header-flex">
+            <!-- LOGO -->
             <div class="logo">
               <img src="../img/logo.jpg" alt="logo" />
               <span>VƯỜN SÁCH THƠ</span>
             </div>
 
+            <!-- SEARCH -->
             <div class="search-box">
               <input type="text" placeholder="Tìm kiếm sản phẩm..." />
               <i class="fa fa-search"></i>
             </div>
 
+            <!-- RIGHT -->
             <div class="header-right">
               <div class="item">
                 <i class="fa fa-phone"></i>
@@ -51,32 +54,41 @@
           </div>
         </div>
 
-        <nav class="menu-bar">
+        <!-- MENU -->
+        <div class="menu-bar">
           <div class="container-navbar">
             <ul class="menu">
-              <li><span class="emoji">🏠</span>Trang chủ</li>
+              <li>
+                <span class="emoji">🏠</span
+                ><a href="../page/home.html">Trang chủ</a>
+              </li>
+
               <li><i class="fa fa-info-circle"></i> Về chúng tôi</li>
 
+              <!-- DROPDOWN -->
               <li class="dropdown">
                 <label for="book-toggle">
-                  <span class="emoji">📚</span>Chuyên mục sách
+                  <span class="emoji">📚</span
+                  ><a href="../page/chuyenmuc.html">Chuyên mục sách</a>
                   <i class="fa fa-caret-down"></i>
                 </label>
                 <input type="checkbox" id="book-toggle" />
+
                 <ul class="submenu">
-                  <li>Sách lịch sử</li>
-                  <li>Sách kỹ năng</li>
-                  <li>Sách truyện</li>
-                  <li>Sách luyện đề</li>
+                  <li><a href="van-hoc-viet-nam.html">Sách văn học</a></li>
+                  <li><a href="sach-ky-nang.html">Sách kỹ năng</a></li>
+                  <li><a href="truyen-tranh.html">Sách truyện</a></li>
                 </ul>
               </li>
 
+              <!-- DROPDOWN -->
               <li class="dropdown">
                 <label for="news-toggle">
                   <span class="emoji">📰</span>Tin tức và sự kiện
                   <i class="fa fa-caret-down"></i>
                 </label>
                 <input type="checkbox" id="news-toggle" />
+
                 <ul class="submenu">
                   <li>Tin báo chí</li>
                   <li>Sự kiện</li>
@@ -85,7 +97,7 @@
               <li><i class="fa fa-phone"></i> Liên hệ</li>
             </ul>
           </div>
-        </nav>
+        </div>
       </header>
 
       <main>
