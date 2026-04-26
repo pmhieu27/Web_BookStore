@@ -170,6 +170,60 @@ a {
   background: #f0f0f0;
 }
 
+/* Giao diện lớp nền đen */
+.zoom-overlay {
+    display: none; /* Mặc định ẩn */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9); /* Đen đậm sang trọng */
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Khung chứa ảnh và chữ */
+.zoom-content {
+    text-align: center;
+    max-width: 80%;
+}
+
+/* Ảnh khi phóng to */
+#zoom-img {
+    max-height: 80vh;
+    max-width: 100%;
+    border: 4px solid #fff;
+    border-radius: 5px;
+    transform: scale(0.8); /* Trạng thái chờ zoom */
+    transition: transform 0.3s ease-out;
+}
+
+/* Tiêu đề sách dưới ảnh */
+#zoom-caption {
+    color: #fff;
+    margin-top: 15px;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Nút đóng (X) */
+.zoom-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #f1f1f1;
+    font-size: 50px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.zoom-close:hover {
+    color: #ff5722; /* Đổi màu khi di chuột vào */
+}
+
 /* FOOTER */
 footer {
   background: url("footer-bg.jpg") no-repeat center/cover;

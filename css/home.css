@@ -41,18 +41,38 @@ header {
   height: 100px;
 }
 
-/* BANNER */
+/* BANNER - ĐÃ SỬA ĐỂ DÙNG JQUERY */
 .banner-container {
-  grid-area: banner;
-  width: 100%;
-  height: 500px;
-  overflow: hidden;
+    grid-area: banner;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    position: relative; /* Quan trọng để ảnh đè lên nhau */
 }
 
 .slides {
-  display: flex;
-  width: 200%;
-  animation: slide 8s infinite ease-in-out;
+    display: block; /* Không dùng flex nữa để ảnh chồng lên nhau */
+    width: 100%;
+    height: 100%;
+}
+
+.slides img {
+    position: absolute; /* Chồng tất cả ảnh lên một vị trí */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+/* Thêm Class Sticky cho Menu (nếu chưa có) */
+.sticky-nav {
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 /* QUAN TRỌNG */
