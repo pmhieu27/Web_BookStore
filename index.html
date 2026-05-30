@@ -1,271 +1,190 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Trang chủ</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/home.css" />
-    <link rel="stylesheet" href="css/header.css" />
-    <link rel="stylesheet" href="css/footer.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <!-- HEADER -->
-      <header>
-        <div class="header-top">
-          <div class="container-navbar header-flex">
-            <!-- LOGO -->
-            <div class="logo">
-              <img src="img/logo.jpg" alt="logo" />
-              <span>VƯỜN SÁCH THƠ</span>
+<!doctype html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vane Vietnam | Trang Sức Cao Cấp</title>
+  <meta name="description" content="Vane Vietnam — Trang sức cao cấp, chế tác thủ công." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💎</text></svg>">
+  <link rel="stylesheet" href="src/css/base.css?v=7" />
+  <link rel="stylesheet" href="src/css/output.css?v=7" />
+  <link rel="stylesheet" href="src/css/custom.css?v=7" />
+</head>
+<body class="bg-ivory text-charcoal font-sans opacity-0 transition-opacity duration-500">
+
+  <!-- Loader -->
+  <div id="loader" class="fixed inset-0 z-200 bg-ivory flex items-center justify-center">
+    <div class="font-logo text-2xl tracking-[0.4em]">VANE</div>
+  </div>
+
+  <div id="component-header"></div>
+
+  <main>
+
+    <!-- ══════════ HERO ══════════ -->
+    <section id="component-hero" class="relative h-screen flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0">
+        <img src="https://placehold.co/1920x1080/1a1a1a/C9A96E?text=." alt="" class="w-full h-full object-cover opacity-50">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/40"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-3xl">
+        <p class="font-ui text-[10px] tracking-[0.5em] uppercase text-gold/80 mb-8" data-reveal="scale">Chế tác thủ công từ 2005</p>
+        <h1 class="font-serif text-5xl md:text-7xl text-white leading-tight mb-8" data-reveal="scale" data-reveal-delay="1">Vẻ Đẹp<br>Vượt Thời Gian</h1>
+        <p class="text-white/50 text-sm max-w-md mx-auto mb-12 leading-relaxed" data-reveal="scale" data-reveal-delay="2">Những kiệt tác trang sức được chế tác từ nguyên liệu quý hiếm nhất.</p>
+        <a href="collections.html" class="inline-block font-ui text-[11px] uppercase tracking-[0.2em] text-white border border-white/30 px-10 py-4 hover:bg-white hover:text-primary transition-all duration-500" data-reveal="scale" data-reveal-delay="3">Khám Phá</a>
+      </div>
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 scroll-indicator cursor-pointer">
+        <div class="w-px h-12 bg-white/20 mx-auto mb-2"></div>
+        <p class="font-ui text-[8px] uppercase tracking-[0.3em] text-white/30">Scroll</p>
+      </div>
+    </section>
+
+    <!-- ══════════ BỘ SƯU TẬP ══════════ -->
+    <section class="bg-ivory">
+      <div class="max-w-6xl mx-auto px-8 py-32 md:py-44">
+        <div class="text-center mb-20" data-reveal="scale">
+          <p class="font-ui text-[10px] tracking-[0.4em] uppercase text-gold mb-4">Bộ Sưu Tập</p>
+          <h2 class="font-serif text-4xl md:text-5xl text-primary">Kiệt Tác Trang Sức</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <a href="collections.html?category=rings" class="group block" data-reveal="scale" data-reveal-delay="1">
+            <div class="overflow-hidden mb-6">
+              <img src="https://placehold.co/600x750/e8e2da/A68B5B?text=Nhẫn" alt="Nhẫn" class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105">
             </div>
-
-            <!-- SEARCH -->
-            <div class="search-box">
-              <input type="text" placeholder="Tìm kiếm sản phẩm..." />
-              <i class="fa fa-search"></i>
+            <p class="font-serif text-xl text-primary text-center group-hover:text-gold transition-colors">Nhẫn Cưới</p>
+          </a>
+          <a href="collections.html?category=necklaces" class="group block" data-reveal="scale" data-reveal-delay="2">
+            <div class="overflow-hidden mb-6">
+              <img src="https://placehold.co/600x750/dfd8ce/A68B5B?text=Dây+Chuyền" alt="Dây Chuyền" class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105">
             </div>
-
-            <!-- RIGHT -->
-            <div class="header-right">
-              <div class="item">
-                <i class="fa fa-phone"></i>
-                <div>
-                  <b>19006656</b><br />
-                  <span>Hỗ trợ khách hàng</span>
-                </div>
-              </div>
-
-              <div class="item">
-                <i class="fa fa-user"></i>
-                <div>
-                  <b>Đăng nhập</b><br />
-                  <span>Đăng ký</span>
-                </div>
-              </div>
-
-              <div class="item cart">
-                <i class="fa fa-shopping-cart"></i>
-                <span class="badge">0</span>
-              </div>
+            <p class="font-serif text-xl text-primary text-center group-hover:text-gold transition-colors">Dây Chuyền</p>
+          </a>
+          <a href="collections.html?category=bracelets" class="group block" data-reveal="scale" data-reveal-delay="3">
+            <div class="overflow-hidden mb-6">
+              <img src="https://placehold.co/600x750/e8e2da/A68B5B?text=Vòng+Tay" alt="Vòng Tay" class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105">
             </div>
+            <p class="font-serif text-xl text-primary text-center group-hover:text-gold transition-colors">Vòng Tay</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ SẢN PHẨM NỔI BẬT ══════════ -->
+    <section class="bg-primary text-white">
+      <div class="max-w-6xl mx-auto px-8 py-32 md:py-44">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div class="order-2 lg:order-1" data-reveal="left">
+            <p class="font-ui text-[10px] tracking-[0.4em] uppercase text-gold mb-6">Nổi Bật</p>
+            <h2 class="font-serif text-4xl md:text-6xl leading-tight mb-8">Nhẫn Kim Cương<br>Eternal</h2>
+            <div class="w-10 h-px bg-gold/30 mb-8"></div>
+            <p class="text-white/50 text-sm leading-loose mb-10 max-w-md">Chế tác từ vàng trắng 18K cao cấp, đính viên kim cương chủ 1.5 carat cắt brilliant. Kiệt tác biểu tượng cho tình yêu vĩnh cửu.</p>
+            <p class="font-serif text-3xl text-gold mb-10">45.000.000₫</p>
+            <a href="product-detail.html?id=1" class="btn-primary">Xem Chi Tiết</a>
+          </div>
+          <div class="order-1 lg:order-2" data-reveal="right">
+            <img src="https://placehold.co/700x700/1a1a1a/C9A96E?text=Eternal+Ring" alt="Nhẫn Eternal" class="w-full aspect-square object-cover">
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- MENU -->
-        <div class="menu-bar">
-          <div class="container-navbar">
-            <ul class="menu">
-              <li>
-                <span class="emoji">🏠</span
-                ><a href="page/home.html">Trang chủ</a>
-              </li>
+    <!-- ══════════ SẢN PHẨM MỚI ══════════ -->
+    <section class="bg-white">
+      <div class="max-w-6xl mx-auto px-8 py-32 md:py-44">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16" data-reveal="scale">
+          <div>
+            <p class="font-ui text-[10px] tracking-[0.4em] uppercase text-gold mb-4">Mới Nhất</p>
+            <h2 class="font-serif text-4xl md:text-5xl text-primary">Sản Phẩm Mới</h2>
+          </div>
+          <a href="collections.html?new=true" class="hidden md:inline-block font-ui text-[10px] uppercase tracking-[0.2em] text-muted hover:text-primary transition-colors mt-4 md:mt-0">Xem tất cả →</a>
+        </div>
+        <div id="new-arrivals-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          <div class="flex flex-col gap-4"><div class="w-full aspect-[3/4] skeleton"></div><div class="h-3 skeleton w-3/4"></div><div class="h-3 skeleton w-1/3"></div></div>
+          <div class="flex flex-col gap-4"><div class="w-full aspect-[3/4] skeleton"></div><div class="h-3 skeleton w-3/4"></div><div class="h-3 skeleton w-1/3"></div></div>
+          <div class="flex flex-col gap-4 hidden md:flex"><div class="w-full aspect-[3/4] skeleton"></div><div class="h-3 skeleton w-3/4"></div><div class="h-3 skeleton w-1/3"></div></div>
+          <div class="flex flex-col gap-4 hidden md:flex"><div class="w-full aspect-[3/4] skeleton"></div><div class="h-3 skeleton w-3/4"></div><div class="h-3 skeleton w-1/3"></div></div>
+        </div>
+        <div class="text-center mt-12 md:hidden">
+          <a href="collections.html?new=true" class="font-ui text-[10px] uppercase tracking-[0.2em] text-primary hover:text-gold transition-colors">Xem tất cả →</a>
+        </div>
+      </div>
+    </section>
 
-              <li><i class="fa fa-info-circle"></i> Về chúng tôi</li>
-
-              <!-- DROPDOWN -->
-              <li class="dropdown">
-                <label for="book-toggle">
-                  <span class="emoji">📚</span
-                  ><a href="page/chuyenmuc.html">Chuyên mục sách</a>
-                  <i class="fa fa-caret-down"></i>
-                </label>
-                <input type="checkbox" id="book-toggle" />
-
-                <ul class="submenu">
-                  <li><a href="page/van-hoc-viet-nam.html">Sách văn học</a></li>
-                  <li><a href="page/sach-ky-nang.html">Sách kỹ năng</a></li>
-                  <li><a href="page/truyen-tranh.html">Sách truyện</a></li>
-                </ul>
-              </li>
-
-              <!-- DROPDOWN -->
-              <li class="dropdown">
-                <label for="news-toggle">
-                  <span class="emoji">📰</span>Tin tức và sự kiện
-                  <i class="fa fa-caret-down"></i>
-                </label>
-                <input type="checkbox" id="news-toggle" />
-
-                <ul class="submenu">
-                  <li><a href="page/tin-bao-chi.html">Tin báo chí</a></li>
-                  <li><a href="page/su-kien.html">Sự kiện</a></li>
-                </ul>
-              </li>
-              <li><i class="fa fa-phone"></i> Liên hệ</li>
-            </ul>
+    <!-- ══════════ CÂU CHUYỆN ══════════ -->
+    <section class="bg-ivory">
+      <div class="max-w-6xl mx-auto px-8 py-32 md:py-44">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div data-reveal="left">
+            <img src="https://placehold.co/700x700/e0d9cf/A68B5B?text=Nghệ+Nhân" alt="Nghệ nhân" class="w-full aspect-square object-cover">
+          </div>
+          <div data-reveal="right">
+            <p class="font-ui text-[10px] tracking-[0.4em] uppercase text-gold mb-6">Về Chúng Tôi</p>
+            <h2 class="font-serif text-4xl md:text-5xl text-primary leading-tight mb-8">Di Sản Của<br>Sự Tinh Tế</h2>
+            <div class="w-10 h-px bg-gold/30 mb-8"></div>
+            <p class="text-muted text-sm leading-loose mb-6">Từ năm 2005, Vane Vietnam kiến tạo những kiệt tác trang sức — nơi nghệ thuật truyền thống giao thoa với thiết kế đương đại.</p>
+            <p class="text-muted text-sm leading-loose mb-10">Mỗi tác phẩm là kết tinh của hàng trăm giờ chế tác, sử dụng nguyên liệu quý hiếm được tuyển chọn kỹ lưỡng.</p>
+            <a href="about.html" class="btn-outline">Tìm Hiểu Thêm</a>
           </div>
         </div>
-      </header>
+      </div>
+    </section>
 
-      <!-- BANNER -->
-      <section class="banner-container">
-        <div class="banner">
-          <div class="slides">
-            <img src="img/banner1.jpg" />
-            <img src="img/banner2.jpg" />
+    <!-- ══════════ THỐNG KÊ ══════════ -->
+    <section class="bg-primary">
+      <div class="max-w-5xl mx-auto px-8 py-20 md:py-28">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-10 text-center" data-reveal="scale">
+          <div>
+            <p class="font-serif text-4xl text-gold mb-3">20+</p>
+            <p class="font-ui text-[9px] uppercase tracking-[0.3em] text-white/30">Năm Kinh Nghiệm</p>
+          </div>
+          <div>
+            <p class="font-serif text-4xl text-gold mb-3">5K+</p>
+            <p class="font-ui text-[9px] uppercase tracking-[0.3em] text-white/30">Khách Hàng</p>
+          </div>
+          <div>
+            <p class="font-serif text-4xl text-gold mb-3">500+</p>
+            <p class="font-ui text-[9px] uppercase tracking-[0.3em] text-white/30">Thiết Kế</p>
+          </div>
+          <div>
+            <p class="font-serif text-4xl text-gold mb-3">100%</p>
+            <p class="font-ui text-[9px] uppercase tracking-[0.3em] text-white/30">Thủ Công</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- MAIN -->
-      <main>
-        <section class="sec-new-book">
-          <div class="title">
-            <h2>Sách mới phát hành</h2>
-          </div>
-          <div class="category-container">
-            <div class="book-item">
-              <div class="thumb">
-                <a
-                  class="img-book"
-                  href=""
-                  title="Nobita Và Cuộc Phiêu Lưu Vào Thế Giới Trong Tranh"
-                >
-                  <div>
-                    <img
-                      src="img/nobita-va-cuoc-phieu-luu-vao-the-gioi-trong-tranh_bia.jpg"
-                      alt="Book 1"
-                    />
-                    <h3 class="book-title">
-                      Nobita Và Cuộc Phiêu Lưu Vào Thế Giới Trong Tranh
-                    </h3>
-                    <p class="book-price">100.000</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="book-item">
-              <div class="thumb">
-                <a
-                  class="img-book"
-                  href=""
-                  title="Nobita Và Bản Giao Hưởng Địa Cầu"
-                >
-                  <div>
-                    <img
-                      src="img/nobita-va-ban-giao-huong-dia-cau_bia.jpg"
-                      alt="Nobita Và Bản Giao Hưởng Địa Cầu"
-                    />
-                    <h3 class="book-title">Nobita Và Bản Giao Hưởng Địa Cầu</h3>
-                    <p class="book-price">100.000</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="sec-hot-book">
-          <div class="title">
-            <h2>Sách bán chạy</h2>
-          </div>
-          <div class="category-container">
-            <div class="book-item">
-              <div class="thumb">
-                <a
-                  class="img-book"
-                  href=""
-                  title="Nobita Và Cuộc Phiêu Lưu Vào Thế Giới Trong Tranh"
-                >
-                  <div>
-                    <img
-                      src="img/nobita-va-cuoc-phieu-luu-vao-the-gioi-trong-tranh_bia.jpg"
-                      alt="Book 1"
-                    />
-                    <h3 class="book-title">
-                      Nobita Và Cuộc Phiêu Lưu Vào Thế Giới Trong Tranh
-                    </h3>
-                    <p class="book-price">100.000</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="book-item">
-              <div class="thumb">
-                <a
-                  class="img-book"
-                  href="img/nobita-va-ban-giao-huong-dia-cau_bia.jpg"
-                  title="Nobita Và Bản Giao Hưởng Địa Cầu"
-                >
-                  <div>
-                    <img
-                      src="img/nobita-va-ban-giao-huong-dia-cau_bia.jpg"
-                      alt="Nobita Và Bản Giao Hưởng Địa Cầu"
-                    />
-                    <h3 class="book-title">Nobita Và Bản Giao Hưởng Địa Cầu</h3>
-                    <p class="book-price">100.000</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
+  </main>
 
-      <!-- FOOTER -->
-      <footer>
-        <div class="footer-container">
-          <!-- Cột 1 -->
-          <div class="footer-col">
-            <h2 class="logo"><img src="img/logo.jpg" /> VƯỜN SÁCH THƠ</h2>
-            <p>
-              Vườn Sách Thơ - nơi dành cho những người yêu sách, đam mê văn
-              chương, khám phá tri thức và nuôi dưỡng tâm hồn qua từng trang
-              sách.
-            </p>
-
-            <div class="social">
-              <i class="fab fa-facebook"></i>
-              <i class="fab fa-youtube"></i>
-              <i class="fa fa-shopping-bag"></i>
-              <i class="fab fa-instagram"></i>
-              <i class="fab fa-tiktok"></i>
-            </div>
-          </div>
-
-          <!-- Cột 2 -->
-          <div class="footer-col">
-            <h3>LIÊN HỆ VỚI CHÚNG TÔI</h3>
-
-            <p>
-              <i class="fa fa-map-marker"></i>
-              Số 12, Chùa Bộc, Đống Đa, Hai Bà Trưng, Hà Nội
-            </p>
-
-            <!-- PHONE GROUP -->
-            <div class="phone">
-              <i class="fa fa-phone"></i>
-              <div>
-                <p>Hotline kinh doanh: 0123456789</p>
-                <p>Hotline giao hàng: 0987654321</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Cột 3 -->
-          <div class="footer-col">
-            <h3>ĐĂNG KÝ NHẬN KHUYẾN MÃI</h3>
-            <p>Đừng bỏ lỡ những chương trình hấp dẫn</p>
-
-            <div class="subscribe">
-              <input
-                type="email"
-                placeholder="Gửi tới Vườn Email của bạn nha"
-              />
-              <button>ĐĂNG KÝ</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="footer-bottom">© Bản quyền thuộc về Vườn Sách Thơ</div>
-      </footer>
+  <!-- ══════════ NEWSLETTER ══════════ -->
+  <section class="bg-ivory">
+    <div class="max-w-md mx-auto px-8 py-28 md:py-36 text-center" data-reveal="scale">
+      <p class="font-ui text-[10px] tracking-[0.4em] uppercase text-gold mb-4">Đăng Ký</p>
+      <h2 class="font-serif text-3xl md:text-4xl text-primary mb-4">Nhận Tin Ưu Đãi</h2>
+      <p class="text-muted text-sm mb-10 leading-relaxed">Thông tin bộ sưu tập mới và ưu đãi dành riêng cho bạn.</p>
+      <form id="newsletter-form" class="relative">
+        <input type="email" required placeholder="Email của bạn" class="w-full bg-transparent border-b border-charcoal/15 text-charcoal font-ui text-sm px-0 py-3 pr-10 focus:outline-none focus:border-gold transition-colors placeholder:text-muted/40">
+        <button type="submit" class="absolute right-0 top-1/2 -translate-y-1/2 text-gold hover:text-primary transition-colors text-xl cursor-pointer">→</button>
+      </form>
     </div>
-    <script src="js/main.js" async defer></script>
-  </body>
+  </section>
+
+  <div id="component-footer"></div>
+
+  <!-- Sub Footer -->
+  <footer class="bg-primary">
+    <div class="max-w-6xl mx-auto px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="font-ui text-[9px] text-white/20 tracking-wide">© 2025 Vane Vietnam</p>
+      <div class="flex gap-6">
+        <a href="#" class="font-ui text-[9px] text-white/20 hover:text-gold transition-colors tracking-wide">Bảo Mật</a>
+        <a href="#" class="font-ui text-[9px] text-white/20 hover:text-gold transition-colors tracking-wide">Điều Khoản</a>
+        <a href="#" class="font-ui text-[9px] text-white/20 hover:text-gold transition-colors tracking-wide">Đổi Trả</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="component-cart-overlay"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="src/js/app.js?v=8"></script>
+</body>
 </html>
