@@ -22,7 +22,7 @@ $(async function () {
     setTimeout(function () {
       $loader.hide();
       $("body").removeClass("opacity-0");
-    }, 500);
+    }, 600);
   };
 
   // Load a single JS file (cached)
@@ -58,7 +58,7 @@ $(async function () {
 
   var pageConfig = {
     "index.html": {
-      modules: ["parallax", "cart", "wishlist", "newsletter", "toast"],
+      modules: ["parallax", "luxury-scroll", "glow", "cart", "wishlist", "newsletter", "toast"],
       page: "home",
     },
     "collections.html": {
@@ -78,7 +78,7 @@ $(async function () {
       page: "wishlist-page",
     },
     "about.html": {
-      modules: ["parallax"],
+      modules: ["parallax", "luxury-scroll"],
       page: "about",
     },
     "services.html": {
@@ -116,7 +116,7 @@ $(async function () {
 
     // 3. Determine current page and load modules + page script
     var currentPage = getCurrentPage();
-    var config = pageConfig[currentPage] || { modules: ["cursor"], page: null };
+    var config = pageConfig[currentPage] || { modules: [], page: null };
 
     // Build module script paths
     var moduleScripts = $.map(config.modules || [], function (mod) {

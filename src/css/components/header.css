@@ -1,44 +1,31 @@
 /* ===== HEADER & NAVIGATION ===== */
 
-/* --- Nav Link Underline Animation --- */
-.nav-link {
-  position: relative;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 50%;
-  width: 0;
-  height: 1px;
-  background-color: currentColor;
-  transition: width 0.3s ease, left 0.3s ease;
-}
-
-.nav-link:hover::after {
-  width: 100%;
-  left: 0;
-}
-
 /* --- Header States --- */
 .header-transparent {
   background-color: transparent;
   color: #FFFFFF;
 }
 
-.header-transparent #top-bar, .header-transparent #nav-bar {
-  border-color: rgba(0, 0, 0, 0.06);
+.header-transparent:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.header-transparent #top-bar,
+.header-transparent #nav-bar {
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .header-scrolled {
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   color: #0A0A0A;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04), 0 4px 20px rgba(0, 0, 0, 0.03);
 }
 
-.header-scrolled #top-bar, .header-scrolled #nav-bar {
+.header-scrolled #top-bar,
+.header-scrolled #nav-bar {
   border-color: rgba(0, 0, 0, 0.05);
 }
 
@@ -61,6 +48,18 @@
 
 .sidebar-menu-overlay.active .sidebar-menu-content {
   transform: translateX(0);
+}
+
+/* --- Menu & Search Overlay Active States --- */
+#search-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 /* --- Breadcrumb --- */

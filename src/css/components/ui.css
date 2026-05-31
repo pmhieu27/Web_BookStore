@@ -32,12 +32,17 @@
 }
 
 /* --- Custom Scrollbar --- */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #f5f5f5; }
-::-webkit-scrollbar-thumb { background: #C9A96E; border-radius: 3px; }
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #FAF8F5; }
+::-webkit-scrollbar-thumb { background: #C9A96E; border-radius: 10px; }
 ::-webkit-scrollbar-thumb:hover { background: #A68B5B; }
 
 /* --- Loader --- */
+#loader {
+  background: #FFFFFF;
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
 #loader.opacity-0 { pointer-events: none; }
 
 /* --- Tab Component --- */
@@ -106,10 +111,14 @@
   font-family: "Montserrat", sans-serif; font-size: 0.75rem; font-weight: 500;
   text-transform: uppercase; letter-spacing: 0.15em; padding: 1rem 2.5rem;
   background-color: #C9A96E; color: #FFFFFF; border: 1px solid #C9A96E;
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
   cursor: pointer; position: relative; overflow: hidden;
 }
-.btn-primary:hover { background-color: #A68B5B; border-color: #A68B5B; box-shadow: 0 4px 20px rgba(201, 169, 110, 0.25); }
+.btn-primary:hover {
+  background-color: #A68B5B; border-color: #A68B5B;
+  box-shadow: 0 4px 20px rgba(201, 169, 110, 0.3);
+  transform: translateY(-1px);
+}
 
 /* --- Outline Button --- */
 .btn-outline {
@@ -117,9 +126,41 @@
   font-family: "Montserrat", sans-serif; font-size: 0.75rem; font-weight: 500;
   text-transform: uppercase; letter-spacing: 0.15em; padding: 1rem 2.5rem;
   background-color: transparent; color: #0A0A0A; border: 1px solid #0A0A0A;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; cursor: pointer;
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+  cursor: pointer;
 }
-.btn-outline:hover { background-color: #0A0A0A; color: #FFFFFF; }
+.btn-outline:hover {
+  background-color: #0A0A0A; color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Gold Outline Button --- */
+.btn-gold-outline {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  font-family: "Montserrat", sans-serif; font-size: 0.75rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.15em; padding: 1rem 2.5rem;
+  background-color: transparent; color: #C9A96E; border: 1px solid #C9A96E;
+  transition: all 0.4s ease; cursor: pointer;
+}
+.btn-gold-outline:hover {
+  background-color: #C9A96E; color: #FFFFFF;
+  box-shadow: 0 4px 20px rgba(201, 169, 110, 0.25);
+  transform: translateY(-1px);
+}
+
+/* --- White Button (for dark backgrounds) --- */
+.btn-white {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  font-family: "Montserrat", sans-serif; font-size: 0.75rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.15em; padding: 1rem 2.5rem;
+  background-color: transparent; color: #FFFFFF; border: 1px solid rgba(255,255,255,0.3);
+  transition: all 0.4s ease; cursor: pointer;
+}
+.btn-white:hover {
+  background-color: #FFFFFF; color: #0A0A0A;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
+}
 
 /* --- Testimonial Slider --- */
 .testimonial-slider { position: relative; overflow: hidden; }
