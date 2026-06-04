@@ -23,4 +23,12 @@
     "description_vi": "Điểm nhấn tinh tế cho mỗi cử động",
     "description_en": "Exquisite highlight for every movement"
   }
+  {
+    "id": "earrings",
+    "name_vi": "Hoa tai",
+    "name_en": "Earrings",
+    "image": "src/images/product-earrings.png",
+    "description_vi": "Điểm xuyết dịu dàng cho vẻ đẹp tinh khôi",
+    "description_en": "A delicate touch to your natural beauty"
+  }
 ]
