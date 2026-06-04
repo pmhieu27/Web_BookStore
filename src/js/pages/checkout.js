@@ -13,7 +13,6 @@ $(function () {
             .toString()
             .replace(/\B(?=(\d{3})+(?!\d))/g, ".") + "₫";
     }
-
     // =================================
     // RENDER ĐƠN HÀNG (Hỗ trợ Giỏ hàng & Mua ngay)
     // =================================
@@ -27,7 +26,7 @@ $(function () {
         } else {
             // Trường hợp 2: Mua từ Giỏ hàng tổng
             if (typeof window.VaneCart !== "undefined") {
-                items = window.VaneCart.getAll();
+                items = window.VaneCart.getCart();
             }
         }
 
@@ -53,6 +52,7 @@ $(function () {
                 if (!product) return;
 
                 const qty = item.qty || 1;
+                const sizeText = item.size ? ` | Size: ${item.size}` : ""; // Lấy size từ giỏ hàng hoặc bộ nhớ tạm
                 const subtotal = product.price * qty;
                 total += subtotal;
 
@@ -64,17 +64,17 @@ $(function () {
                             class="w-16 h-16 object-cover rounded-sm"
                         >
                         <div class="flex-1">
-                            <div class="font-serif text-sm text-charcoal tracking-wide">
+                            <div class="font-serif text-[15px] text-charcoal font-bold tracking-wide">
                                 ${product.name_vi}
                             </div>
-                            <div class="text-[11px] text-silver mt-1 uppercase tracking-wider">
-                                Số lượng: ${qty}
+                            <div class="text-[11px] text-gold font-medium mt-1 uppercase tracking-wider">
+                                Số lượng: ${qty}${sizeText}
                             </div>
-                            <div class="text-[11px] text-silver">
+                            <div class="text-[11px] text-gold font-medium mt-1">
                                 Đơn giá: ${formatPrice(product.price)}
                             </div>
                         </div>
-                        <div class="font-sans text-xs font-medium tracking-wider text-charcoal">
+                        <div class="font-sans text-[12px] font-medium tracking-wider text-charcoal">
                             ${formatPrice(subtotal)}
                         </div>
                     </div>
