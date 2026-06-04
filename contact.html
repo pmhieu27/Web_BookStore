@@ -6,32 +6,50 @@
   <title>Liên Hệ | Vane Vietnam</title>
   <meta name="description" content="Liên hệ với Vane Vietnam — showroom, hotline, email." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💎</text></svg>">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap&subset=vietnamese" rel="stylesheet">
+
   <link rel="stylesheet" href="src/css/base.css?v=7" />
   <link rel="stylesheet" href="src/css/output.css?v=7" />
   <link rel="stylesheet" href="src/css/custom.css?v=7" />
-</head>
-<body class="bg-ivory text-charcoal font-sans opacity-0 transition-opacity duration-500">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <div id="loader" class="fixed inset-0 z-200 bg-ivory flex items-center justify-center"><div class="font-logo text-2xl tracking-[0.4em]">VANE</div></div>
+  <style>
+    .transition-all-slow { transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
+    .reveal-hidden { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
+    .reveal-visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body class="bg-ivory text-charcoal font-sans opacity-0 transition-opacity duration-500 antialiased">
+
+  <div id="loader" class="fixed inset-0 z-200 bg-ivory flex items-center justify-center">
+    <div class="font-logo text-2xl tracking-[0.4em]">VANE</div>
+  </div>
+  
   <div id="component-header"></div>
 
   <main>
 
-    <!-- HEADER -->
     <section class="pt-40 pb-16 bg-white border-b border-silver-light/50">
       <div class="max-w-6xl mx-auto px-8">
-        <nav class="mb-8"><ol class="flex items-center gap-2 font-ui text-[10px] tracking-wider text-muted"><li><a href="index.html" class="hover:text-primary transition-colors">Trang Chủ</a></li><li class="text-silver">/</li><li class="text-primary">Liên Hệ</li></ol></nav>
+        <nav class="mb-8">
+          <ol class="flex items-center gap-2 font-ui text-[10px] tracking-wider text-muted">
+            <li><a href="index.html" class="hover:text-primary transition-colors">Trang Chủ</a></li>
+            <li class="text-silver">/</li>
+            <li class="text-primary">Liên Hệ</li>
+          </ol>
+        </nav>
         <p class="font-ui text-[10px] tracking-[0.4em] uppercase text-gold mb-4">Liên Hệ</p>
-        <h1 class="font-serif text-4xl md:text-5xl text-primary">Kết Nối Với Chúng Tôi</h1>
-      </div>
+        <h1 class="font-serif text-4xl md:text-5xl text-primary tracking-wide">Kết nối với chúng tôi</h1>
+        <p class="text-muted text-sm max-w-lg leading-relaxed mt-2">Lắng nghe ý niệm, hiện thực tạo tác độc bản dành riêng cho bạn</p>
     </section>
 
-    <!-- CONTENT -->
-    <section class="bg-ivory py-20 md:py-28">
+    <section class="bg-ivory py-16 px-6">
       <div class="max-w-6xl mx-auto px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
 
-          <!-- INFO -->
           <div data-reveal="left">
             <h2 class="font-serif text-2xl text-primary mb-8">Thông Tin Liên Hệ</h2>
 
@@ -41,9 +59,9 @@
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
                 </div>
                 <div>
-                  <p class="font-ui text-[10px] uppercase tracking-wider text-gold mb-1">Showroom</p>
-                  <p class="text-sm text-charcoal">123 Đường Đồng Khởi, Quận 1</p>
-                  <p class="text-sm text-charcoal">TP. Hồ Chí Minh, Việt Nam</p>
+                  <p class="font-ui text-[10px] uppercase tracking-wider text-gold mb-1">Cơ sở chính</p>
+                  <p class="text-sm text-charcoal">12 Phố Chùa Bộc, phường Kim Liên</p>
+                  <p class="text-sm text-charcoal">TP. Hà Nội, Việt Nam</p>
                 </div>
               </div>
 
@@ -53,7 +71,7 @@
                 </div>
                 <div>
                   <p class="font-ui text-[10px] uppercase tracking-wider text-gold mb-1">Hotline</p>
-                  <p class="text-sm text-charcoal">+84 28 1234 5678</p>
+                  <p class="text-sm text-charcoal">0978887282</p>
                   <p class="text-[11px] text-muted">T2 – T7: 9:00 – 20:00</p>
                 </div>
               </div>
@@ -69,31 +87,74 @@
               </div>
             </div>
 
-            <!-- Map placeholder -->
-            <div class="mt-10 aspect-video bg-silver-light overflow-hidden">
-              <img src="https://placehold.co/800x450/e0e0e0/888888?text=Google+Maps" alt="Bản đồ" class="w-full h-full object-cover">
+            <div class="mt-10 overflow-hidden border border-silver-light rounded-lg shadow-sm">
+              <iframe
+                src="https://maps.google.com/maps?q=12%20Ch%C3%B9a%20B%E1%BB%99c,%20%C4%90%E1%BB%91ng%20%C4%90a,%20H%C3%A0%20N%E1%BB%99i&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="400"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              frameborder="0"</iframe>
             </div>
           </div>
 
-          <!-- FORM -->
-          <div data-reveal="right">
+          <div class="reveal-item" data-reveal="right">
             <h2 class="font-serif text-2xl text-primary mb-8">Gửi Tin Nhắn</h2>
-            <form id="contact-form" class="space-y-6">
+
+            <form id="contact-form" class="space-y-6" novalidate>
+
               <div>
-                <label class="font-ui text-[10px] uppercase tracking-wider text-charcoal block mb-2">Họ và Tên *</label>
-                <input type="text" required class="w-full bg-white border border-silver-light px-4 py-3 font-ui text-sm focus:outline-none focus:border-gold transition-colors">
+                <label class="flex items-center gap-2 text-charcoal mb-2">
+                  <i class="fa-solid fa-user text-primary text-xs"></i>
+                  <span class="font-ui text-[11px] uppercase tracking-wider font-medium">Họ và Tên *</span>
+                </label>
+                <input
+                  id="form-name"
+                  type="text"
+                  required
+                  class="w-full bg-white border border-silver-light px-4 py-3 font-sans text-sm focus:outline-none focus:border-gold transition-colors">
+                <div id="error-name" class="error-msg">Vui lòng nhập họ và tên của bạn.</div>
               </div>
+
               <div>
-                <label class="font-ui text-[10px] uppercase tracking-wider text-charcoal block mb-2">Email *</label>
-                <input type="email" required class="w-full bg-white border border-silver-light px-4 py-3 font-ui text-sm focus:outline-none focus:border-gold transition-colors">
+                <label class="flex items-center gap-2 text-charcoal mb-2">
+                  <i class="fa-solid fa-envelope text-primary text-xs"></i>
+                  <span class="font-ui text-[11px] uppercase tracking-wider font-medium">Email *</span>
+                </label>
+                <input
+                  id="form-email"
+                  type="email"
+                  required
+                  class="w-full bg-white border border-silver-light px-4 py-3 font-sans text-sm focus:outline-none focus:border-gold transition-colors">
+                <div id="error-email" class="error-msg">Vui lòng nhập đúng định dạng Email (Ví dụ: tên@email.com).</div>
               </div>
+
               <div>
-                <label class="font-ui text-[10px] uppercase tracking-wider text-charcoal block mb-2">Số Điện Thoại</label>
-                <input type="tel" class="w-full bg-white border border-silver-light px-4 py-3 font-ui text-sm focus:outline-none focus:border-gold transition-colors">
+                <label class="flex items-center gap-2 text-charcoal mb-2">
+                  <i class="fa-solid fa-phone text-primary text-xs"></i>
+                  <span class="font-ui text-[11px] uppercase tracking-wider font-medium">Số Điện Thoại *</span>
+                </label>
+                <input
+                  id="form-phone"
+                  type="text"
+                  inputmode="numeric"
+                  pattern="[0-9]{10}"
+                  maxlength="10"
+                  required
+                  class="w-full bg-white border border-silver-light px-4 py-3 font-sans text-sm focus:outline-none focus:border-gold transition-colors"
+                  placeholder="Ví dụ: 0912345678">
+                <div id="error-phone" class="error-msg">Số điện thoại không hợp lệ. Vui lòng nhập đúng 10 chữ số.</div>
               </div>
+
               <div>
-                <label class="font-ui text-[10px] uppercase tracking-wider text-charcoal block mb-2">Chủ Đề</label>
-                <select class="w-full bg-white border border-silver-light px-4 py-3 font-ui text-sm focus:outline-none focus:border-gold transition-colors cursor-pointer">
+                <label class="flex items-center gap-2 text-charcoal mb-2">
+                  <i class="fa-solid fa-tag text-primary text-xs"></i>
+                  <span class="font-ui text-[11px] uppercase tracking-wider font-medium">Chủ Đề</span>
+                </label>
+                <select
+                  class="w-full bg-white border border-silver-light px-4 py-3 font-sans text-sm focus:outline-none focus:border-gold transition-colors cursor-pointer">
                   <option>Tư vấn sản phẩm</option>
                   <option>Thiết kế riêng</option>
                   <option>Bảo hành / Sửa chữa</option>
@@ -101,11 +162,27 @@
                   <option>Khác</option>
                 </select>
               </div>
+
               <div>
-                <label class="font-ui text-[10px] uppercase tracking-wider text-charcoal block mb-2">Nội Dung *</label>
-                <textarea required rows="5" class="w-full bg-white border border-silver-light px-4 py-3 font-ui text-sm focus:outline-none focus:border-gold transition-colors resize-none"></textarea>
+                <label class="flex items-center gap-2 text-charcoal mb-2">
+                  <i class="fa-solid fa-comment text-primary text-xs"></i>
+                  <span class="font-ui text-[11px] uppercase tracking-wider font-medium">Nội Dung *</span>
+                </label>
+                <textarea
+                  id="form-message"
+                  required
+                  rows="4"
+                  class="w-full bg-white border border-silver-light px-4 py-3 font-sans text-sm focus:outline-none focus:border-gold transition-colors resize-none"></textarea>
+                <div id="error-message" class="error-msg">Vui lòng nhập nội dung lời nhắn.</div>
               </div>
-              <button type="submit" class="btn-primary w-full justify-center cursor-pointer">Gửi Tin Nhắn</button>
+
+              <button
+                type="submit"
+                class="btn-primary w-full justify-center cursor-pointer py-3.5 bg-primary text-white font-ui text-xs uppercase tracking-widest hover:bg-gold transition-colors duration-300 flex items-center">
+                <i class="fa-solid fa-paper-plane mr-2 text-[10px]"></i>
+                Gửi Tin Nhắn
+              </button>
+
             </form>
           </div>
 
@@ -115,10 +192,13 @@
 
   </main>
 
-  <div id="component-footer"></div>
-  <footer class="bg-primary"><div class="max-w-6xl mx-auto px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3"><p class="font-ui text-[9px] text-white/20">© 2025 Vane Vietnam</p><div class="flex gap-6"><a href="#" class="font-ui text-[9px] text-white/20 hover:text-gold transition-colors">Bảo Mật</a><a href="#" class="font-ui text-[9px] text-white/20 hover:text-gold transition-colors">Điều Khoản</a></div></div></footer>
+ <div id="component-footer"></div>
   <div id="component-cart-overlay"></div>
+
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  
   <script src="src/js/app.js?v=8"></script>
+  
+  <script src="src/js/contact.js?v=1"></script>
 </body>
 </html>

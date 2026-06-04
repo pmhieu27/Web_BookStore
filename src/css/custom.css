@@ -10,3 +10,356 @@
 @import "./components/filters.css";
 @import "./components/forms.css";
 @import "./components/ui.css";
+
+#store-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+#store-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#store-list::-webkit-scrollbar-thumb {
+    background: rgba(193, 154, 107, 0.4);
+}
+
+#store-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(193, 154, 107, 0.7);
+}
+
+/* ==========================================================================
+   VANE VIETNAM - LUXURY REFINEMENT (BRAND TOKEN COMPLIANT)
+   ========================================================================== */
+
+/* Hiệu ứng mũi tên động phần Hero Button */
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+.hero-scroll-btn {
+  animation: bounce-slow 2s infinite ease-in-out;
+  border: 1px solid rgba(201, 169, 110, 0.4);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.22, 1);
+}
+.hero-scroll-btn:hover {
+  border-color: #C9A96E;
+  background-color: rgba(201, 169, 110, 0.1);
+  box-shadow: 0 0 15px rgba(201, 169, 110, 0.3);
+}
+
+/* Thống nhất tỷ lệ khung ảnh ngang và bọc viền khung chữ phần VANA Chồng Lớp */
+.vana-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+.vana-img-block {
+  width: 60%;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 16 / 9; /* Ép tất cả ảnh phần này về cùng một tỷ lệ khung ngang chuẩn nghệ thuật */
+}
+.vana-img-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.vana-card-block {
+  width: 45%;
+  position: absolute;
+  right: 0;
+  z-index: 10;
+  background-color: #FFFFFF !important; /* Đổi sang nền trắng tinh khôi theo yêu cầu */
+  border: 1px solid #C9A96E; /* Bo viền vàng gold tinh tế */
+}
+.vana-container.reverse .vana-img-block {
+  order: 2;
+  margin-left: auto;
+}
+.vana-container.reverse .vana-card-block {
+  left: 0;
+  right: auto;
+}
+
+/* Cập nhật màu nền Card Timeline vàng đậm hơn để tăng độ nổi bật */
+.timeline-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 40px 0;
+}
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: #C9A96E;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.timeline-row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 80px;
+  position: relative;
+}
+.timeline-col {
+  width: 50%;
+  position: relative;
+  z-index: 2;
+}
+.timeline-row:nth-child(even) .timeline-col {
+  margin-left: auto;
+  padding-left: 60px;
+}
+.timeline-row:nth-child(odd) .timeline-col {
+  text-align: right;
+  padding-right: 60px;
+}
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #C9A96E;
+  border-radius: 50%;
+  background-color: #FAF8F5;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.22, 1);
+}
+.timeline-interactive-card {
+  background-color: #F4EBD9 !important; /* Tông màu Vàng Cát ấm sang trọng, đậm đặn và nổi bật */
+  border: 1px solid rgba(201, 169, 110, 0.3);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.22, 1);
+  cursor: pointer;
+}
+.timeline-row:hover .timeline-interactive-card,
+.timeline-row:active .timeline-interactive-card {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(201, 169, 110, 0.15);
+}
+.timeline-row:hover .timeline-dot,
+.timeline-row:active .timeline-dot {
+  background-color: #C9A96E;
+  box-shadow: 0 0 15px #C9A96E;
+  width: 14px;
+  height: 14px;
+}
+
+/* Đội ngũ nghệ nhân - Quản lý tương tác đen trắng mượt mà */
+.artisan-image-container {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 24px;
+  position: relative;
+}
+.artisan-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.22, 1);
+}
+.artisan-group:hover .artisan-img,
+.artisan-group:active .artisan-img {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+/* Responsive tối ưu cho Mobile & Tablet */
+@media (max-w: 1023px) {
+  .vana-container, .vana-container.reverse {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .vana-img-block, .vana-card-block {
+    width: 100%;
+    position: relative;
+    right: auto;
+    left: auto;
+  }
+  .vana-card-block {
+    margin-top: -30px;
+  }
+  .timeline-line {
+    left: 20px;
+  }
+  .timeline-row {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 40px;
+    margin-bottom: 50px;
+  }
+  .timeline-col {
+    width: 100%;
+    text-align: left !important;
+    padding: 0 !important;
+  }
+  .timeline-dot {
+    left: 20px;
+  }
+}
+
+    /* Hiệu ứng ẩn/hiện mượt mà cho Header global */
+    #component-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+      will-change: transform;
+    }
+    #component-header.header-hidden { transform: translateY(-100%); }
+    #component-header.header-visible { transform: translateY(0); }
+
+    /* Định dạng dòng thông báo lỗi Tiếng Việt tinh tế bên dưới input */
+    .error-msg {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      color: #b91c1c;
+      margin-top: 6px;
+      display: none;
+    }
+    .input-error {
+      border-color: #b91c1c !important;
+    }
+
+    /* ==========================================================================
+   VANE VIETNAM - NEW PAGE COMPONENT STYLES
+   ========================================================================== */
+
+.btn-blog-filter {
+  color: #71717A;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 4px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+.btn-blog-filter:hover {
+  color: #0A0A0A;
+}
+.btn-blog-filter.filter-active {
+  color: #0A0A0A !important;
+  font-weight: 600 !important;
+  border-bottom-color: #C9A96E !important;
+}
+.blog-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E4E4E7;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0.75rem; /* Bo góc card tinh tế chuẩn hi-end */
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.blog-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+  border-color: #C9A96E;
+}
+.blog-img-wrap {
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  margin-bottom: 1.25rem;
+  border-radius: 0.5rem;
+  background-color: rgba(10, 10, 10, 0.02);
+}
+.blog-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.blog-card:hover .blog-img-wrap img {
+  transform: scale(1.04);
+}
+.blog-meta-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #C9A96E;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.blog-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  color: #0A0A0A;
+  line-height: 1.35;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+.blog-excerpt {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: #71717A;
+  line-height: 1.6;
+  text-align: justify;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Khóa text mô tả đúng 3 dòng */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.blog-card-bottom {
+  padding-top: 1rem;
+  border-top: 1px solid #F4F4F5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.blog-date {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: #A1A1AA;
+}
+.blog-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #0A0A0A;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+.blog-card:hover .blog-link {
+  color: #C9A96E;
+}
+
+/* Khung bọc ngoài ảnh chèn giữa bài viết */
+.article-inner-img {
+  width: 100%;
+  border: 1px solid #E4E4E7;
+  padding: 8px;
+  background-color: #FBF9F4; /* Nền kem dịu nhẹ */
+  border-radius: 0.75rem;     /* Bo góc đồng bộ 12px giống thẻ card */
+  margin: 2rem 0;
+}
+
+/* ÉP CỨNG TỶ LỆ ẢNH TRONG BÀI VIẾT - CHỐNG CÁI NGẮN CÁI DÀI */
+.article-inner-img img {
+  width: 100%;
+  aspect-ratio: 16 / 10;     /* Khóa cứng tỷ lệ vàng 16:10 cho tất cả ảnh nội dung */
+  object-fit: cover;         /* Tự động cắt cúp ảnh gọn gàng, không bị móp méo */
+  border-radius: 0.5rem;      /* Bo góc ảnh bên trong */
+}
+
+.img-caption {
+  display: block;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: #71717A;
+  font-style: italic;
+  margin-top: 10px;
+  letter-spacing: 0.02em;
+}
