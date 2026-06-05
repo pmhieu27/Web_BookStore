@@ -49,6 +49,23 @@
   color: #FFFFFF;
 }
 
+.product-card .product-overlay .wishlist-btn {
+  background-color: #FFFFFF;
+  color: #0A0A0A;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.product-card .product-overlay .wishlist-btn:hover {
+  background-color: #F9F7F2;
+  color: #C9A96E;
+  transform: translateY(-1px);
+}
+
+.product-card .product-overlay .wishlist-btn.active svg {
+  fill: #C9A96E;
+  stroke: #C9A96E;
+}
+
 .product-card:hover .product-img-secondary {
   opacity: 1;
 }
