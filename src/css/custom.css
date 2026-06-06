@@ -700,3 +700,17 @@
     }
 
 }
+
+/* Làm nổi bật ô input khi có lỗi */
+.input-error {
+    border-color: #ef4444 !important; /* Màu đỏ */
+}
+
+/* Ẩn thông báo lỗi mặc định */
+.error-msg {
+    display: none;
+    color: #ef4444;
+    font-size: 11px;
+    margin-top: 5px;
+    font-family: sans-serif;
+}
