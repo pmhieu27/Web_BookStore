@@ -55,10 +55,10 @@
   transform: translateX(0);
 }
 
-/* --- Menu & Search Overlay Active States --- */
-#search-overlay.active {
+#search-dropdown.active {
   opacity: 1;
   visibility: visible;
+  transform: translateY(0);
 }
 
 /* --- Menu Overlay (Sidebar) --- */

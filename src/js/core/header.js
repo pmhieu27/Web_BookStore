@@ -60,16 +60,14 @@ $(function () {
 
   // --- Search overlay ---
   function openSearch() {
-    var $s = $("#search-overlay");
+    var $s = $("#search-dropdown");
     if (!$s.length) return;
     $s.addClass("active");
     $s.find("input").trigger("focus");
-    $("body").css("overflow", "hidden");
   }
 
   function closeSearch() {
-    $("#search-overlay").removeClass("active");
-    $("body").css("overflow", "");
+    $("#search-dropdown").removeClass("active");
   }
 
   // --- Event delegation ---
@@ -82,8 +80,15 @@ $(function () {
       e.preventDefault(); closeMenu(); return;
     }
     // Search
-    if ($t.closest("#search-btn").length) { e.preventDefault(); openSearch(); return; }
+    if ($t.closest("#search-btn, #search-btn-nav").length) { e.preventDefault(); openSearch(); return; }
     if ($t.closest("#search-close").length) { e.preventDefault(); closeSearch(); return; }
+
+    // Close search dropdown on click outside
+    if ($("#search-dropdown").hasClass("active") && 
+        !$t.closest("#search-dropdown").length && 
+        !$t.closest("#search-btn, #search-btn-nav").length) {
+      closeSearch();
+    }
   });
 
   $(document).on("keydown", function (e) {
