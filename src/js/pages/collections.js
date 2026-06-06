@@ -84,7 +84,6 @@ $(function () {
         '<img src="' + p.images[0] + '" alt="' + p.name_vi + '" class="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-105">' +
         (p.images[1] ? '<img src="' + p.images[1] + '" alt="' + p.name_vi + '" class="product-img-secondary absolute inset-0 w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-105">' : '') +
        '<div class="absolute bottom-0 inset-x-0 p-3 flex justify-center gap-2 translate-y-full group-hover:translate-y-0 transition-transform duration-400">' +
-        // CHỈ SỬA ĐOẠN NÀY: Thay các class cũ bằng class "diamond-btn"
 '<button class="diamond-btn add-to-cart-btn" data-id="' + p.id + '">' +
   '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>' +
 '</button>' +
@@ -110,7 +109,6 @@ $(function () {
       $count.text("0 sản phẩm");
       return;
     }
-
     $empty.addClass("hidden");
     $grid.show();
     $count.text(products.length + " sản phẩm");
@@ -120,6 +118,7 @@ $(function () {
       html += renderProductCard(p);
     });
     $grid.html(html);
+
   }
 
   // --- Filter logic ---
@@ -135,8 +134,9 @@ $(function () {
       categories.push(activePill);
     }
 
-    // Sidebar checkboxes
-    $("#filter-sidebar .filter-group").each(function () {
+    // Sidebar checkboxes (Desktop) VÀ Mobile Panel
+    // Đã cập nhật để quét cả 2 bảng lọc
+    $("#filter-sidebar .filter-group, #mobile-filter-panel .filter-group").each(function () {
       var title = $(this).find(".filter-group-title").text().trim();
       $(this).find("input:checked").each(function () {
         var val = $(this).val();
@@ -148,28 +148,7 @@ $(function () {
 
     return { categories: categories, materials: materials, statuses: statuses, maxPrice: maxPrice };
   }
-
-  function applyFilters() {
-    var f = getActiveFilters();
-
-    filteredProducts = allProducts.filter(function (p) {
-      if (f.categories.length && f.categories.indexOf(p.category) === -1) return false;
-      if (f.materials.length && f.materials.indexOf(p.material) === -1) return false;
-      if (p.price > f.maxPrice) return false;
-      if (f.statuses.length) {
-        var match = false;
-        if (f.statuses.indexOf("new") !== -1 && p.isNew) match = true;
-        if (f.statuses.indexOf("sale") !== -1 && p.originalPrice) match = true;
-        if (f.statuses.indexOf("bestseller") !== -1 && p.isBestSeller) match = true;
-        if (!match) return false;
-      }
-      return true;
-    });
-
-    applySorting();
-    renderGrid(filteredProducts);
-  }
-
+  
   function applySorting() {
     var sort = $("#sort-select").val();
     filteredProducts.sort(function (a, b) {
@@ -181,6 +160,39 @@ $(function () {
     });
   }
 
+
+  function applyFilters() {
+    var f = getActiveFilters();
+    console.log("Filter yêu cầu:", f); // [LOG QUAN TRỌNG]
+
+    filteredProducts = allProducts.filter(function (p) {
+        // Kiểm tra Category
+        if (f.categories.length > 0 && f.categories.indexOf(p.category) === -1) return false;
+        
+        // Kiểm tra Chất liệu
+        if (f.materials.length > 0 && f.materials.indexOf(p.material) === -1) return false;
+        
+        // Kiểm tra Giá
+        if (p.price > f.maxPrice) return false;
+
+        // Kiểm tra Trạng thái
+        if (f.statuses.length > 0) {
+            var match = false;
+            // Chỉ cần 1 trong các trạng thái bạn tick là match = true
+            if (f.statuses.includes("new") && p.isNew === true) match = true;
+            if (f.statuses.includes("sale") && p.originalPrice != null) match = true;
+            if (f.statuses.includes("bestseller") && p.isBestSeller === true) match = true;
+            
+            if (!match) return false;
+        }
+        return true;
+    });
+
+    console.log("Sản phẩm còn lại sau lọc:", filteredProducts.length); // [LOG QUAN TRỌNG]
+    
+    renderGrid(filteredProducts);
+}
+  
   // --- Update page title and controls lookbook ---
   function updatePageTitle(category) {
     var titles = {
@@ -233,7 +245,7 @@ $(function () {
     applyFilters();
   });
 
-  // Sidebar checkboxes
+  // Sidebar checkboxes (chỉ chạy real-time trên Desktop)
   $(document).on("change", "#filter-sidebar input[type='checkbox']", applyFilters);
 
   // Price range
@@ -248,7 +260,8 @@ $(function () {
 
   // Reset
   $(document).on("click", "#filter-reset", function () {
-    $("#filter-sidebar input[type='checkbox']").prop("checked", false);
+    // Đã sửa: Xóa check ở cả Desktop và Mobile
+    $("#filter-sidebar input[type='checkbox'], #mobile-filter-panel input[type='checkbox']").prop("checked", false);
     $("#price-range").val(50000000);
     $("#price-range-value").text("50.000.000₫");
     $(".filter-pill").removeClass("active");
@@ -274,15 +287,24 @@ $(function () {
     window.VaneCart.addToCart(product, null, 1);
   });
 
-  // Mobile filter drawer
+  // Mobile filter drawer - Đã tách nút Đóng và nút Áp Dụng
   $(document).on("click", "#filter-toggle-btn", function () {
     $("#mobile-filter-overlay").addClass("active");
     $("body").css("overflow", "hidden");
   });
-  $(document).on("click", "#mobile-filter-close, #mobile-filter-apply", function () {
+
+  $(document).on("click", "#mobile-filter-close", function () {
     $("#mobile-filter-overlay").removeClass("active");
     $("body").css("overflow", "");
   });
+
+  // Xử lý sự kiện click "Áp Dụng Bộ Lọc" trên Mobile
+  $(document).on("click", "#mobile-filter-apply", function () {
+    applyFilters(); // Chạy bộ lọc
+    $("#mobile-filter-overlay").removeClass("active"); // Đóng menu
+    $("body").css("overflow", "");
+  });
+
   $(document).on("click", "#mobile-filter-overlay", function (e) {
     if ($(e.target).is("#mobile-filter-overlay")) {
       $(this).removeClass("active");

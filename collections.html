@@ -59,12 +59,13 @@
 
           <div class="grid grid-cols-2 gap-3 h-[260px] sm:h-[300px] md:h-[320px] w-full">
             <div class="w-full h-full border border-silver-light/50 overflow-hidden bg-gray-50 flex items-center justify-center">
-              <img id="lookbook-img-1" src="" alt="Vane Concept 1" class="w-full h-full object-cover transition-transform duration-[800ms] hover:scale-105" onerror="this.style.display='none'; this.parentNode.innerHTML='<span class="text-[10px] text-muted/40">Ảnh 1 trống</span>'">
+              <!-- ĐÃ SỬA DẤU NGOẶC KÉP Ở CLASS BÊN TRONG ONERROR -->
+              <img id="lookbook-img-1" src="" alt="Vane Concept 1" class="w-full h-full object-cover transition-transform duration-[800ms] hover:scale-105" onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\'text-[10px] text-muted/40\'>Ảnh 1 trống</span>'">
             </div>
             <div class="w-full h-full border border-silver-light/50 overflow-hidden bg-gray-50 flex items-center justify-center">
-              <img id="lookbook-img-2" src="" alt="Vane Concept 2" class="w-full h-full object-cover transition-transform duration-[800ms] hover:scale-105" onerror="this.style.display='none'; this.parentNode.innerHTML='<span class="text-[10px] text-muted/40">Ảnh 2 trống</span>'">
+              <!-- ĐÃ SỬA DẤU NGOẶC KÉP Ở CLASS BÊN TRONG ONERROR -->
+              <img id="lookbook-img-2" src="" alt="Vane Concept 2" class="w-full h-full object-cover transition-transform duration-[800ms] hover:scale-105" onerror="this.style.display='none'; this.parentNode.innerHTML='<span class=\'text-[10px] text-muted/40\'>Ảnh 2 trống</span>'">
             </div>
-            
           </div>
         </div>
 
@@ -80,6 +81,7 @@
         </div>
       </div>
     </section>
+    
     <!-- ══════════ TOOLBAR ══════════ -->
     <section class="sticky top-[60px] z-30 bg-white/90 backdrop-blur-md border-b border-silver-light/50">
       <div class="max-w-6xl mx-auto px-8 py-3 flex items-center justify-between gap-4">
@@ -109,6 +111,7 @@
         </div>
       </div>
     </section>
+    
     <!-- ══════════ PRODUCT GRID + SIDEBAR ══════════ -->
     <section class="bg-ivory py-12 md:py-16">
       <div class="max-w-6xl mx-auto px-8">
@@ -196,6 +199,7 @@
         </div>
       </div>
     </section>
+    
     <!-- ══════════ MOBILE FILTER DRAWER ══════════ -->
     <div id="mobile-filter-overlay" class="fixed inset-0 z-100 bg-black/50 backdrop-blur-sm opacity-0 invisible transition-all duration-300 [&.active]:opacity-100 [&.active]:visible md:hidden">
       <div id="mobile-filter-panel" class="fixed bottom-0 left-0 right-0 bg-white max-h-[85vh] overflow-y-auto px-6 py-8 translate-y-full transition-transform duration-400 in-[.active]:translate-y-0" style="border-radius:1rem 1rem 0 0;">
