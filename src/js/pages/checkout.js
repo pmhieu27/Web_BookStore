@@ -97,9 +97,10 @@ $(function () {
         $("#fullname-error, #phone-error, #email-error, #address-error, #city-error, #district-error, #ward-error").addClass("hidden");
     }
 
-    function validateForm() {
+   function validateForm() {
         hideErrors();
         let isValid = true;
+        let $firstErrorElement = null; // Biến phụ để đánh dấu ô lỗi đầu tiên xuất hiện
 
         const fullname = $("#fullname").val().trim();
         const phone = $("#phone").val().trim();
@@ -109,13 +110,52 @@ $(function () {
         const district = $("#district").val();
         const ward = $("#ward").val();
 
-        if (!fullname) { $("#fullname-error").removeClass("hidden"); isValid = false; }
-        if (!/^0\d{9}$/.test(phone)) { $("#phone-error").removeClass("hidden"); isValid = false; }
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { $("#email-error").removeClass("hidden"); isValid = false; }
-        if (!address) { $("#address-error").removeClass("hidden"); isValid = false; }
-        if (!city) { $("#city-error").removeClass("hidden"); isValid = false; }
-        if (!district) { $("#district-error").removeClass("hidden"); isValid = false; }
-        if (!ward) { $("#ward-error").removeClass("hidden"); isValid = false; }
+        // --- GIỮ NGUYÊN TOÀN BỘ LOGIC CHECK LỖI BAN ĐẦU CỦA BẠN ---
+        if (!fullname) { 
+            $("#fullname-error").removeClass("hidden"); 
+            isValid = false; 
+            if (!$firstErrorElement) $firstErrorElement = $("#fullname"); // Nhớ mặt ô lỗi đầu tiên
+        }
+        if (!/^0\d{9}$/.test(phone)) { 
+            $("#phone-error").removeClass("hidden"); 
+            isValid = false; 
+            if (!$firstErrorElement) $firstErrorElement = $("#phone");
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { 
+            $("#email-error").removeClass("hidden"); 
+            isValid = false; 
+            if (!$firstErrorElement) $firstErrorElement = $("#email");
+        }
+        if (!address) { 
+            $("#address-error").removeClass("hidden"); 
+            isValid = false; 
+            if (!$firstErrorElement) $firstErrorElement = $("#address");
+        }
+        if (!city) { 
+            $("#city-error").removeClass("hidden"); 
+            isValid = false; 
+            if (!$firstErrorElement) $firstErrorElement = $("#city");
+        }
+        if (!district) { 
+            $("#district-error").removeClass("hidden"); 
+            isValid = false; 
+            if (!$firstErrorElement) $firstErrorElement = $("#district");
+        }
+        if (!ward) { 
+            $("#ward-error").removeClass("hidden"); 
+            isValid = false; 
+            if (!$firstErrorElement) $firstErrorElement = $("#ward");
+        }
+
+        // --- THÊM LOGIC CUỘN TRÊN MOBILE (Khi có lỗi và màn hình < 1024px) ---
+        if (!isValid && $firstErrorElement && window.innerWidth < 1024) {
+            // Lấy vị trí của ô lỗi trừ đi 120px để tránh bị cái Header cố định đè lên chữ
+            const scrollTopPosition = $firstErrorElement.offset().top - 120;
+            
+            $("html, body").animate({
+                scrollTop: scrollTopPosition
+            }, 500); // Tốc độ cuộn 500ms mượt mà
+        }
 
         return isValid;
     }
