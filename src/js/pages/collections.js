@@ -97,7 +97,29 @@ $(function () {
       '<div>' + priceHtml + '</div>' +
     '</a>';
   }
+ function initScrollReveal() {
+    // 1. Tạo "Bộ giám sát"
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // Khi phần tử lọt vào màn hình (10%)
+            if (entry.isIntersecting) {
+                // Thêm class revealed -> CSS tự chạy hiệu ứng
+                entry.target.classList.add('revealed');
+                // Xong rồi thì không cần quét nó nữa
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
 
+    // 2. Gom tất cả các thẻ data-reveal lại (cả cũ lẫn mới)
+    document.querySelectorAll('[data-reveal]').forEach(el => {
+        // Chỉ thêm vào bộ giám sát nếu nó chưa được theo dõi
+        if (!el.dataset.observed) {
+            observer.observe(el);
+            el.dataset.observed = 'true'; // Đánh dấu là "đã đăng ký theo dõi"
+        }
+    });
+}
   function renderGrid(products) {
     var $grid = $("#products-grid");
     var $empty = $("#products-empty");
@@ -118,7 +140,9 @@ $(function () {
       html += renderProductCard(p);
     });
     $grid.html(html);
-
+    setTimeout(function() {
+        initScrollReveal();
+    }, 10);
   }
 
   // --- Filter logic ---
@@ -160,7 +184,6 @@ $(function () {
     });
   }
 
-
   function applyFilters() {
     var f = getActiveFilters();
     console.log("Filter yêu cầu:", f); // [LOG QUAN TRỌNG]
@@ -187,7 +210,7 @@ $(function () {
         }
         return true;
     });
-
+    applySorting();
     console.log("Sản phẩm còn lại sau lọc:", filteredProducts.length); // [LOG QUAN TRỌNG]
     
     renderGrid(filteredProducts);
