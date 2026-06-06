@@ -305,10 +305,10 @@
   stroke-dashoffset: 600;
   transition: stroke-dashoffset 0.4s linear; 
 }
-/* --- PHOM NÚT BẤM VIỀN KIM CƯƠNG LẤP LÁNH - BẢN THU NHỎ TINH TẾ --- */
+/* --- PHOM NÚT BẤM HÌNH THOI --- */
 .diamond-btn {
-  width: 28px !important;  /* Thu nhỏ từ 36px xuống 28px */
-  height: 28px !important; /* Thu nhỏ từ 36px xuống 28px */
+  width: 24px !important;
+  height: 24px !important;
   padding: 0 !important;
   display: inline-flex !important;
   align-items: center;
@@ -318,92 +318,79 @@
   position: relative;
   background: none !important;
   z-index: 1;
-  
-  /* Giữ bo góc nhẹ (hoặc đổi thành 50% nếu bạn muốn thu thành hình tròn xíu xiu) */
-  border-radius: 6px !important; 
-}
-
-/* LỚP NỀN XOAY TẠO HIỆU ỨNG GLITTER CHẠY VÒNG QUANH */
-.diamond-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 6px !important;
-  padding: 1px; /* Vuốt mảnh đường viền xuống 1px cho tinh tế */
-  
-  /* Dải màu kim cương tấm phản chiếu */
-  background: conic-gradient(
-    #ffffff, 
-    #C9A96E, 
-    #ffffff, 
-    #EAE6DF, 
-    #C9A96E, 
-    #ffffff
-  ) !important;
-  
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  
-  animation: glitterRotate 4s linear infinite;
+  border-radius: 4px !important;
+  transform: rotate(45deg);
   transition: all 0.3s ease;
 }
 
-/* PHẦN LÒNG NÚT BẤM NẰM KHÍT BÊN TRONG */
-.diamond-btn::after {
-  content: '';
-  position: absolute;
-  inset: 1px; /* Khít theo đường viền 1px */
-  border-radius: 5px !important;
-  z-index: -1;
-  transition: all 0.3s ease;
-}
 
+/* HIỆU ỨNG NỀN MẮT MÈO (Dùng linear-gradient tạo vệt sáng chéo) */
 /* Nút Giỏ hàng */
 .add-to-cart-btn::after {
-  background: rgba(10, 10, 10, 0.95) !important;
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 4px !important;
+  z-index: -1;
+  background: linear-gradient(
+    135deg,
+    #121212 0%,
+    #121212 40%,
+    #ffffff 50%,
+    #121212 60%,
+    #121212 100%
+  ) !important;
+  background-size: 300% 300% !important; /* Phóng to để tạo độ mượt khi chuyển động */
+  background-position: 50% 50%;
+ 
+ 
+  transition: background-position 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
 }
 .add-to-cart-btn svg { color: #FFFFFF !important; }
 
+
 /* Nút Yêu thích */
 .toggle-wishlist-btn::after {
-  background: rgba(250, 248, 245, 0.95) !important;
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 4px !important;
+  z-index: -1;
+  background: linear-gradient(
+    135deg,
+    #FAF8F5 0%,
+    #FAF8F5 40%,
+    #EAE6DF 50%,
+    #FAF8F5 60%,
+    #FAF8F5 100%
+  ) !important;
+  background-size: 300% 300% !important;
+  background-position: 50% 50%;
+ 
+  transition: background-position 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
 }
 .toggle-wishlist-btn svg { color: #0A0A0A !important; }
 
 
+
+
 /* --- HIỆU ỨNG TƯƠNG TÁC HOVER --- */
 .diamond-btn:hover {
-  transform: translateY(-2px) scale(1.03); /* Giảm độ nảy để mượt hơn với size nhỏ */
-  filter: drop-shadow(0 2px 8px rgba(201, 169, 110, 0.3)); 
+  transform: rotate(45deg) translateY(-2px) scale(1.05);
+  filter: drop-shadow(0 4px 12px rgba(10, 10, 10, 0.15));
 }
 
-/* Khi di chuột vào viền xoay nhanh hơn */
-.diamond-btn:hover::before {
-  animation-duration: 1.5s; 
-}
 
-/* Lòng nút đổi sang màu vàng Gold mượt mà */
 .diamond-btn:hover::after {
-  background: #C9A96E !important;
-}
-.diamond-btn:hover svg {
-  color: #FFFFFF !important;
+  background-position: 100% 100% !important;
 }
 
-/* Keyframes giữ nguyên tốc độ xoay */
-@keyframes glitterRotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
 
-/* ĐIỀU CHỈNH ICON SVG NHỎ LẠI ĐỂ VỪA VỚI NÚT */
+/* ĐIỀU CHỈNH VÀ XOAY NGƯỢC ICON */
 .diamond-btn svg {
-  width: 10px !important;  /* Thu nhỏ icon từ 13px xuống 10px cho vừa vặn */
-  height: 10px !important;
+  width: 11px !important;  
+  height: 11px !important;
   transition: all 0.3s ease;
   z-index: 2;
+  transform: rotate(-45deg);
 }
