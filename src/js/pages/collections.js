@@ -16,23 +16,23 @@ $(function () {
   var lookbookData = {
     rings: {
       quote: '"Biểu tượng của tình yêu vĩnh cửu."',
-      img1: "src/images/product-ring-50.png",
-      img2: "src/images/product-ring-51.png",
+      img1: "src/images/product-ring-banner1.png",
+      img2: "src/images/product-ring-banner2.png",
     },
     necklaces: {
       quote: '"Vẻ đẹp tỏa sáng trên xương quai xanh."',
-      img1: "src/images/product-necklace-621.png",
-      img2: "src/images/product-necklace-371.png"
+      img1: "src/images/product-necklace-banner1.png",
+      img2: "src/images/product-necklace-banner2.png"
     },
     bracelets: {
       quote: '"Điểm nhấn tinh tế cho mỗi cử động."',
-      img1: "src/images/banner-bracelets-621.png",
-      img2: "src/images/banner-bracelets-371.png"
+      img1: "src/images/product-bracelet-banner1.png",
+      img2: "src/images/product-bracelet-banner2.png"
     },
     earrings: {
       quote: '"Điểm xuyết dịu dàng cho vẻ đẹp tinh khôi."',
-      img1: "src/images/banner-earrings-1.png",
-      img2: "src/images/banner-earrings-2.png"
+      img1: "src/images/product-earrings-banner1.png",
+      img2: "src/images/product-earrings-banner2.png"
     }
   };
 
@@ -250,23 +250,21 @@ $(function () {
     updateLookbookContent(currentCat);
   }
 
-  // --- Events ---
 
   // Category pills click realtime switching
   $(document).on("click", ".filter-pill", function () {
     $(".filter-pill").removeClass("active");
     $(this).addClass("active");
-    
+   
     var selectedCategory = $(this).attr("data-category");
-    
     if (selectedCategory === "all") {
       updatePageTitle(null);
     } else {
       updatePageTitle(selectedCategory);
     }
-
     applyFilters();
   });
+
 
   // Sidebar checkboxes (chỉ chạy real-time trên Desktop)
   $(document).on("change", "#filter-sidebar input[type='checkbox']", applyFilters);
