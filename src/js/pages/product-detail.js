@@ -175,13 +175,7 @@ $(function () {
     window.location.href = "checkout.html";
   });
 
-  // --- Wishlist ---
-  $(document).on("click", "#toggle-wishlist-detail", function () {
-    var id = $(this).attr("data-id");
-    if (typeof window.VaneWishlist !== "undefined") {
-      window.VaneWishlist.toggle(parseInt(id));
-    }
-  });
+
 
   // --- Accordion ---
   $(document).on("click", ".accordion-trigger", function () {

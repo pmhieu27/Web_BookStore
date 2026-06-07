@@ -7,7 +7,7 @@
 }
 
 .header-transparent:hover {
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   color: #000000;
 }
 
@@ -29,7 +29,6 @@
   border-color: rgba(0, 0, 0, 0.05);
 }
 
-/* Header links: đổi màu ngay lập tức */
 #main-header a {
   transition: color 0s;
 }
@@ -48,14 +47,19 @@
   pointer-events: auto;
 }
 
-/* --- Sửa lại Menu Sidebar (Khối trắng chứa nội dung) --- */
 #menu-sidebar {
-  /* Ép trình duyệt thiết lập hiệu ứng trượt từ CSS thuần, đè Tailwind */
-  transform: translateX(-100%) !important; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 500px;
+  height: 100vh;
+  background-color: #FFFFFF !important;
+  z-index: 10;
+  transform: translateX(-100%) !important;
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
-/* Khi cha có active, kích hoạt con trượt ra */
 #menu-overlay.active #menu-sidebar {
   transform: translateX(0) !important;
 }
@@ -65,21 +69,6 @@
   visibility: visible;
   transform: translateY(0);
 }
-
-/* --- Menu Overlay (Sidebar) --- */
-#menu-overlay {
-  pointer-events: none;
-}
-
-#menu-overlay.active {
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto;
-}
-
-/* #menu-overlay.active #menu-sidebar {
-  transform: translateX(0) !important;
-} */
 
 /* --- Breadcrumb --- */
 .breadcrumb {
