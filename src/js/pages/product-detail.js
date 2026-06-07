@@ -263,8 +263,4 @@ $(function () {
       window.location.href = "checkout.html";
     }
   });
-
-  $(document).on("click", ".accordion-trigger", function () {
-    $(this).closest(".accordion-item").toggleClass("active");
-  });
 });
