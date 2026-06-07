@@ -4,6 +4,8 @@
 $(function () {
   "use strict";
 
+  
+
   var allProducts = [];
   var filteredProducts = [];
 
@@ -46,27 +48,43 @@ $(function () {
   }
 
   // Hàm bổ trợ điều khiển ẩn/hiện và nạp nội dung cho Lookbook
+  // Hàm điều khiển ẩn/hiện và nạp nội dung cho Lookbook
   function updateLookbookContent(category) {
     var $lookbookBanner = $("#dynamic-lookbook-banner");
     var $plainTitleRow = $("#plain-title-row");
 
+    // Nếu chọn danh mục cụ thể (Nhẫn, Dây chuyền, Vòng tay, Hoa tai)
     if (category && lookbookData[category]) {
       var data = lookbookData[category];
       
       // Thay ruột dữ liệu chữ và ảnh tương ứng danh mục
       $("#lookbook-quote").text(data.quote);
-      $("#lookbook-sub-desc").text(data.subDesc);
+      $("#lookbook-bottom-desc").text(data.subDesc);
       $("#lookbook-img-1").attr("src", data.img1);
       $("#lookbook-img-2").attr("src", data.img2);
       
       // Hiện khung nghệ thuật lớn, ẩn tiêu đề trơn
       $lookbookBanner.css("display", "grid");
       $plainTitleRow.css("display", "none");
+
+      // HIỆN lại tiêu đề, THANH TOOLBAR, và lưới sản phẩm cho khách mua hàng
+      $("#shop-header-filter").show();
+      $("#shop-toolbar-filter").show(); // <-- Hiện lại thanh toolbar khi vào mục con
+      $("#shop-products-container").show();
+      $("#lookbook-design-space").hide();
+
     } else {
-      // Nếu chọn "Tất Cả" hoặc trang "Sản Phẩm Mới" -> Ẩn banner ảnh, hiện hàng tiêu đề trơn gọn gàng
+      // NẾU LÀ TRANG BỘ SƯU TẬP CHÍNH (Chọn "Tất Cả" hoặc không có category)
       $lookbookBanner.css("display", "none");
-      $plainTitleRow.css("display", "flex");
-      $("#lookbook-sub-desc").text("Khám phá những thiết kế tinh xảo của VANE, được chế tác tỉ mỉ để tôn vinh nét đẹp thanh lịch trường tồn.");
+      $plainTitleRow.css("display", "none");
+      
+      // ẨN TOÀN BỘ bộ lọc tiêu đề, THANH TOOLBAR, và danh sách sản phẩm lỉnh kỉnh đi
+      $("#shop-header-filter").hide();
+      $("#shop-toolbar-filter").hide(); // <-- Ẩn dứt điểm thanh toolbar ở trang BST chính
+      $("#shop-products-container").hide();
+
+      // HIỆN không gian trắng tinh để cậu tự do thiết kế câu chuyện thương hiệu
+      $("#lookbook-design-space").removeClass("hidden").show();
     }
   }
 
