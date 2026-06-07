@@ -4,6 +4,8 @@
 $(function () {
   "use strict";
 
+  
+
   var allProducts = [];
   var filteredProducts = [];
 
@@ -16,21 +18,25 @@ $(function () {
   var lookbookData = {
     rings: {
       quote: '"Biểu tượng của tình yêu vĩnh cửu."',
-      img1: "src/images/product-ring-banner1.png",
-      img2: "src/images/product-ring-banner2.png",
+      subDesc: 'Mỗi chiếc nhẫn là một câu chuyện được gìn giữ, mang ngôn ngữ của sự gắn kết trọn đời.',
+      img1: "src/images/product-ring-banner2.png",
+      img2: "src/images/product-ring-banner1.png",
     },
     necklaces: {
       quote: '"Vẻ đẹp tỏa sáng trên xương quai xanh."',
+      subDesc: 'Tuyệt tác hòa quyện giữa kỹ nghệ tinh hoa và thiết kế đương đại, nâng tầm phong cách thượng lưu.',
       img1: "src/images/product-necklace-banner1.png",
       img2: "src/images/product-necklace-banner2.png"
     },
     bracelets: {
       quote: '"Điểm nhấn tinh tế cho mỗi cử động."',
+      subDesc: 'Ôm lấy cổ tay bằng ánh kim rực rỡ, khơi gợi nét duyên dáng thầm lặng trong từng cử chỉ nhỏ nhất.',
       img1: "src/images/product-bracelet-banner1.png",
       img2: "src/images/product-bracelet-banner2.png"
     },
     earrings: {
       quote: '"Điểm xuyết dịu dàng cho vẻ đẹp tinh khôi."',
+      subDesc: 'Ánh sáng tinh xảo lấp lánh theo từng bước đi, mỗi khoảnh khắc đều trở thành nghệ thuật.',
       img1: "src/images/product-earrings-banner1.png",
       img2: "src/images/product-earrings-banner2.png"
     }
@@ -42,27 +48,43 @@ $(function () {
   }
 
   // Hàm bổ trợ điều khiển ẩn/hiện và nạp nội dung cho Lookbook
+  // Hàm điều khiển ẩn/hiện và nạp nội dung cho Lookbook
   function updateLookbookContent(category) {
     var $lookbookBanner = $("#dynamic-lookbook-banner");
     var $plainTitleRow = $("#plain-title-row");
 
+    // Nếu chọn danh mục cụ thể (Nhẫn, Dây chuyền, Vòng tay, Hoa tai)
     if (category && lookbookData[category]) {
       var data = lookbookData[category];
       
       // Thay ruột dữ liệu chữ và ảnh tương ứng danh mục
       $("#lookbook-quote").text(data.quote);
-      $("#lookbook-bottom-desc").text(data.desc);
+      $("#lookbook-bottom-desc").text(data.subDesc);
       $("#lookbook-img-1").attr("src", data.img1);
       $("#lookbook-img-2").attr("src", data.img2);
       
       // Hiện khung nghệ thuật lớn, ẩn tiêu đề trơn
       $lookbookBanner.css("display", "grid");
       $plainTitleRow.css("display", "none");
+
+      // HIỆN lại tiêu đề, THANH TOOLBAR, và lưới sản phẩm cho khách mua hàng
+      $("#shop-header-filter").show();
+      $("#shop-toolbar-filter").show(); // <-- Hiện lại thanh toolbar khi vào mục con
+      $("#shop-products-container").show();
+      $("#lookbook-design-space").hide();
+
     } else {
-      // Nếu chọn "Tất Cả" hoặc trang "Sản Phẩm Mới" -> Ẩn banner ảnh, hiện hàng tiêu đề trơn gọn gàng
+      // NẾU LÀ TRANG BỘ SƯU TẬP CHÍNH (Chọn "Tất Cả" hoặc không có category)
       $lookbookBanner.css("display", "none");
-      $plainTitleRow.css("display", "flex");
-      $("#lookbook-bottom-desc").text("Khám phá những thiết kế tinh xảo của VANE, được chế tác tỉ mỉ để tôn vinh nét đẹp thanh lịch trường tồn.");
+      $plainTitleRow.css("display", "none");
+      
+      // ẨN TOÀN BỘ bộ lọc tiêu đề, THANH TOOLBAR, và danh sách sản phẩm lỉnh kỉnh đi
+      $("#shop-header-filter").hide();
+      $("#shop-toolbar-filter").hide(); // <-- Ẩn dứt điểm thanh toolbar ở trang BST chính
+      $("#shop-products-container").hide();
+
+      // HIỆN không gian trắng tinh để cậu tự do thiết kế câu chuyện thương hiệu
+      $("#lookbook-design-space").removeClass("hidden").show();
     }
   }
 
@@ -168,6 +190,7 @@ $(function () {
         else if (title.includes("Chất Liệu")) materials.push(val);
         else if (title.includes("Trạng Thái")) statuses.push(val);
       });
+      
     });
 
     return { categories: categories, materials: materials, statuses: statuses, maxPrice: maxPrice };
@@ -296,14 +319,75 @@ $(function () {
     $(this).closest(".filter-group").toggleClass("collapsed");
   });
 
+  var quickCartProduct = null;
+  var quickCartSelectedSize = null;
+
+  function openSizePicker(product) {
+    quickCartProduct = product;
+    quickCartSelectedSize = null;
+    $("#size-picker-title").text(product.name_vi || "Chọn size sản phẩm");
+
+    var optionsHtml = "";
+    if (product.sizes && product.sizes.length) {
+      $.each(product.sizes, function (i, size) {
+        optionsHtml += '<button type="button" class="size-picker-option" data-size="' + size + '">' + size + '</button>';
+      });
+    } else {
+      optionsHtml = '<p class="text-sm text-muted">Sản phẩm này không có tùy chọn size.</p>';
+    }
+
+    $("#size-picker-options").html(optionsHtml);
+    $("#size-picker-overlay").addClass("active").attr("aria-hidden", "false");
+  }
+
+  function closeSizePicker() {
+    quickCartProduct = null;
+    quickCartSelectedSize = null;
+    $("#size-picker-overlay").removeClass("active").attr("aria-hidden", "true");
+    $("#size-picker-options").empty();
+  }
+
+  $(document).off("click", ".size-picker-option").on("click", ".size-picker-option", function () {
+    $(".size-picker-option").removeClass("selected");
+    $(this).addClass("selected");
+    quickCartSelectedSize = $(this).attr("data-size");
+  });
+
+  $(document).off("click", "#size-picker-close").on("click", "#size-picker-close", function () {
+    closeSizePicker();
+  });
+
+  $(document).off("click", "#size-picker-overlay").on("click", "#size-picker-overlay", function (e) {
+    if (e.target.id === "size-picker-overlay") {
+      closeSizePicker();
+    }
+  });
+
+  $(document).off("click", "#size-picker-confirm").on("click", "#size-picker-confirm", function () {
+    if (!quickCartProduct) return;
+    if (!quickCartSelectedSize) {
+      $(document).trigger("toast", ["Bạn cần chọn size trước khi thêm vào giỏ.", "error"]);
+      return;
+    }
+    var selectedSize = quickCartSelectedSize;
+    window.VaneCart.addToCart(quickCartProduct, selectedSize, 1);
+    closeSizePicker();
+    $(document).trigger("toast", ["Đã thêm size " + selectedSize + " vào giỏ.", "success"]);
+  });
+
   // Product card actions
-  $(document).on("click", ".add-to-cart-btn", function (e) {
+  $(document).off("click", ".add-to-cart-btn").on("click", ".add-to-cart-btn", function (e) {
     e.preventDefault();
     e.stopPropagation();
 
     var id = parseInt($(this).attr("data-id"), 10);
     var product = allProducts.find(function (p) { return p.id === id; });
     if (!product || typeof window.VaneCart === "undefined") return;
+
+    if (product.sizes && product.sizes.length) {
+      openSizePicker(product);
+      return;
+    }
 
     window.VaneCart.addToCart(product, null, 1);
   });
@@ -352,4 +436,21 @@ $(function () {
     .fail(function () {
       $("#products-grid").html('<p class="col-span-full text-center text-muted py-10">Không thể tải sản phẩm.</p>');
     });
+    //---Set thời gian chạy Kết nối cùng Vane!---
+  setTimeout(function () {
+    $('.vane-zigzag-btn .zigzag-line').css('stroke-dashoffset', '0');
+    
+    setTimeout(function () {
+      
+      $('.vane-zigzag-btn .zigzag-line').css('stroke-dashoffset', '600');
+    
+      setTimeout(function() {
+        $('.vane-zigzag-btn .zigzag-line').css('stroke-dashoffset', '');
+      }, 800); 
+      
+    }, 1300); 
+    
+  }, 3000); 
+  
 });
+

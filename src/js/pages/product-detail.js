@@ -4,10 +4,12 @@
 $(function () {
   "use strict";
 
+  // Lấy ID sản phẩm từ thanh địa chỉ (URL)
   var productId = new URLSearchParams(window.location.search).get("id");
+  
+  // --- MẸO TEST: Nếu chạy trực tiếp file HTML không có ID, tự động lấy sản phẩm đầu tiên (ID: 1) ---
   if (!productId) {
-    $("#product-name").text("Sản phẩm không tìm thấy");
-    return;
+    productId = "10"; // Cậu có thể đổi số này thành ID bất kỳ có trong file products.json của cậu để test
   }
 
   var categoryNames = {
@@ -80,7 +82,7 @@ $(function () {
         $("#size-selector").removeClass("hidden");
         var sizeHtml = "";
         $.each(product.sizes, function (i, size) {
-          sizeHtml += '<button class="size-btn font-ui text-[11px] px-4 py-2 border border-silver-light hover:border-primary transition-colors cursor-pointer' + (i === 0 ? ' border-primary text-primary' : ' text-muted') + '" data-size="' + size + '">' + size + '</button>';
+          sizeHtml += '<button class="size-btn font-ui text-[11px] px-4 py-2 border border-silver-light hover:border-primary transition-colors cursor-pointer text-muted" data-size="' + size + '">' + size + '</button>';
         });
         $("#size-options").html(sizeHtml);
       }
@@ -124,8 +126,8 @@ $(function () {
 
   // --- Size selection ---
   $(document).on("click", ".size-btn", function () {
-    $(".size-btn").removeClass("border-primary text-primary").addClass("text-muted");
-    $(this).addClass("border-primary text-primary").removeClass("text-muted");
+    $(".size-btn").removeClass("border-primary text-primary error").addClass("text-muted");
+    $(this).addClass("border-primary text-primary").removeClass("text-muted error");
   });
 
   // --- Quantity ---
@@ -143,9 +145,18 @@ $(function () {
   function addProductToCart() {
     var qty = parseInt($("#qty-input").val()) || 1;
     var size = $(".size-btn.border-primary").attr("data-size") || null;
+
+    if ($("#size-selector").is(":visible") && !size) {
+      $(document).trigger("toast", ["Bạn chưa chọn size. Vui lòng chọn size trước khi thêm vào giỏ.", "error"]);
+      $(".size-btn").addClass("error");
+      return false;
+    }
+
     if (currentProduct && typeof window.VaneCart !== "undefined") {
       window.VaneCart.addToCart(currentProduct, size, qty);
+      $(document).trigger("toast", ["Đã thêm size " + size + " vào giỏ.", "success"]);
     }
+    return true;
   }
 
   // --- Add to cart ---
@@ -173,6 +184,9 @@ $(function () {
 
     // 4. Chuyển sang trang Checkout mà không đưa vào Giỏ hàng tổng
     window.location.href = "checkout.html";
+    if (addProductToCart()) {
+      window.location.href = "checkout.html";
+    }
   });
 
   // --- Wishlist ---
@@ -183,8 +197,20 @@ $(function () {
     }
   });
 
-  // --- Accordion ---
-  $(document).on("click", ".accordion-trigger", function () {
-    $(this).closest(".accordion-item").toggleClass("active");
+  $(document).off("click", ".accordion-trigger").on("click", ".accordion-trigger", function (e) {
+    e.preventDefault();
+    
+    
+    var $item = $(this).closest(".accordion-item");
+    
+    if ($item.hasClass("active")) {
+      $item.removeClass("active");
+    } else {
+    
+      $(".accordion-item").removeClass("active"); 
+      
+      $item.addClass("active");
+    }
   });
+  
 });
