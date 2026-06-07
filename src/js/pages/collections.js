@@ -8,12 +8,13 @@ $(function () {
   var filteredProducts = [];
   var quickCartProduct = null;
   var quickCartSelectedSize = null;
-
   var params = new URLSearchParams(window.location.search);
   var urlCategory = params.get("category");
   var urlNew = params.get("new");
+  var urlSearch = params.get("search");
+
   var isNewCollection = urlNew === "true";
-  var currentCategory = urlCategory || null;
+  var currentCategory = urlCategory;
 
   var lookbookData = {
     rings: {
@@ -401,6 +402,46 @@ $(function () {
     $("#size-picker-options").empty();
   }
 
+  function updatePageTitle(category) {
+    var activeCategory = typeof category === "undefined" ? currentCategory : category;
+    var titles = {
+      rings: "Nhẫn",
+      necklaces: "Dây chuyền",
+      bracelets: "Vòng tay",
+      earrings: "Hoa tai",
+    };
+
+    $(".filter-pill").removeClass("active");
+
+    if (activeCategory && titles[activeCategory]) {
+      $("#collection-title").text(titles[activeCategory]);
+      $("#plain-collection-title").text(titles[activeCategory]);
+      $("#breadcrumb-current").text(titles[activeCategory]);
+      document.title = titles[activeCategory] + " | Vane Vietnam";
+      $('.filter-pill[data-category="' + activeCategory + '"]').addClass("active");
+    } else if (isNewCollection) {
+      $("#collection-title").text("Sản Phẩm Mới");
+      $("#plain-collection-title").text("Sản Phẩm Mới");
+      $("#breadcrumb-current").text("Sản Phẩm Mới");
+      document.title = "Sản Phẩm Mới | Vane Vietnam";
+      $('.filter-pill[data-category="all"]').addClass("active");
+    } else if (urlSearch && !category) {
+      $("#collection-title").text("Kết quả tìm kiếm cho \"" + urlSearch + "\"");
+      $("#plain-collection-title").text("Tìm kiếm");
+      $("#breadcrumb-current").text("Tìm kiếm");
+      document.title = "Tìm kiếm: " + urlSearch + " | Vane Vietnam";
+      $('.filter-pill[data-category="all"]').addClass("active");
+    } else {
+      $("#collection-title").text("Tất Cả Sản Phẩm");
+      $("#plain-collection-title").text("Tất Cả Sản Phẩm");
+      $("#breadcrumb-current").text("Bộ Sưu Tập");
+      document.title = "Bộ Sưu Tập | Vane Vietnam";
+      $('.filter-pill[data-category="all"]').addClass("active");
+    }
+
+    updateLookbookContent(activeCategory);
+  }
+
   $(document).on("click", ".filter-pill", function () {
     var selectedCategory = $(this).attr("data-category");
 
@@ -510,8 +551,23 @@ $(function () {
   $.getJSON("src/data/products.json")
     .done(function (data) {
       allProducts = data;
-      updatePageTitle(currentCategory);
-      applyFilters();
+
+      if (urlCategory) {
+        filteredProducts = allProducts.filter(function (p) { return p.category === urlCategory; });
+      } else if (urlNew === "true") {
+        filteredProducts = allProducts.filter(function (p) { return p.isNew; });
+      } else if (urlSearch) {
+        var term = urlSearch.toLowerCase();
+        filteredProducts = allProducts.filter(function (p) {
+          return p.name_vi.toLowerCase().indexOf(term) !== -1 ||
+                 p.category.toLowerCase().indexOf(term) !== -1;
+        });
+      } else {
+        filteredProducts = allProducts.slice();
+      }
+
+      updatePageTitle(urlCategory);
+      renderGrid(filteredProducts);
     })
     .fail(function () {
       $("#products-grid").html('<p class="col-span-full text-center text-muted py-10">Không thể tải sản phẩm.</p>');
