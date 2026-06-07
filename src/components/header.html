@@ -126,23 +126,50 @@
     id="search-dropdown"
     class="absolute left-0 right-0 top-full w-full bg-white border-t border-b border-black/5 shadow-2xl opacity-0 invisible -translate-y-2 transition-all duration-300 z-50 text-left"
   >
-    <div class="max-w-4xl mx-auto px-8 py-6 flex items-center gap-6">
-      <!-- Search Icon -->
-      <span class="text-charcoal/40">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M11 3a8 8 0 1 0 0 16 8 8 0 0 0 0-16z"></path>
-          <path d="M21 21l-4.35-4.35"></path>
-        </svg>
-      </span>
-      <input
-        type="text"
-        id="search-input"
-        placeholder="Tìm kiếm sản phẩm..."
-        class="flex-1 bg-transparent text-primary text-lg md:text-xl py-2 focus:outline-none font-serif placeholder:text-muted/50"
-      />
-      <button id="search-close" class="font-ui text-[11px] uppercase tracking-widest text-muted hover:text-primary transition-colors cursor-pointer" aria-label="Đóng">
-        Đóng
-      </button>
+    <div class="max-w-4xl mx-auto px-8 py-6 flex flex-col">
+      <div class="flex items-center gap-6 border-b border-black/5 pb-4">
+        <!-- Search Icon -->
+        <span class="text-charcoal/40">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 3a8 8 0 1 0 0 16 8 8 0 0 0 0-16z"></path>
+            <path d="M21 21l-4.35-4.35"></path>
+          </svg>
+        </span>
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Tìm kiếm sản phẩm..."
+          class="flex-1 bg-transparent text-primary text-lg md:text-xl py-2 focus:outline-none font-serif placeholder:text-muted/50"
+        />
+        <button id="search-submit" class="font-ui text-[11px] uppercase tracking-widest text-primary hover:text-gold transition-colors cursor-pointer mr-2" aria-label="Tìm kiếm">
+          Tìm kiếm
+        </button>
+        <button id="search-close" class="font-ui text-[11px] uppercase tracking-widest text-muted hover:text-primary transition-colors cursor-pointer" aria-label="Đóng">
+          Đóng
+        </button>
+      </div>
+
+      <!-- Vùng tìm kiếm -->
+      <div id="search-results-container" class="hidden pt-6">
+        <p class="font-ui text-[10px] tracking-widest uppercase text-muted mb-4">Gợi ý sản phẩm</p>
+        <div id="search-results-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <!-- Rendered dynamically -->
+        </div>
+        <div class="mt-8 text-center border-t border-black/5 pt-4">
+          <a
+            id="search-view-all"
+            href="collections.html"
+            class="inline-block font-ui text-[11px] uppercase tracking-widest text-primary hover:text-gold border-b border-primary hover:border-gold pb-1 transition-all"
+          >
+            Xem tất cả kết quả
+          </a>
+        </div>
+      </div>
+
+      <!-- Search Empty Area -->
+      <div id="search-empty-msg" class="hidden py-8 text-center text-muted font-ui text-xs tracking-wider">
+        Không tìm thấy sản phẩm nào phù hợp.
+      </div>
     </div>
   </div>
 </header>

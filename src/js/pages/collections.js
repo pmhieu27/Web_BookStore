@@ -11,6 +11,7 @@ $(function () {
   var params = new URLSearchParams(window.location.search);
   var urlCategory = params.get("category");
   var urlNew = params.get("new");
+  var urlSearch = params.get("search");
 
   // --- Kho dữ liệu nội dung Lookbook nghệ thuật riêng của từng danh mục ---
   var lookbookData = {
@@ -239,6 +240,11 @@ $(function () {
       $("#plain-collection-title").text("Sản Phẩm Mới");
       $("#breadcrumb-current").text("Sản Phẩm Mới");
       document.title = "Sản Phẩm Mới | Vane Vietnam";
+    } else if (urlSearch && !category) {
+      $("#collection-title").text("Kết quả tìm kiếm cho \"" + urlSearch + "\"");
+      $("#plain-collection-title").text("Tìm kiếm");
+      $("#breadcrumb-current").text("Tìm kiếm");
+      document.title = "Tìm kiếm: " + urlSearch + " | Vane Vietnam";
     } else {
       $("#collection-title").text("Tất Cả Sản Phẩm");
       $("#plain-collection-title").text("Tất Cả Sản Phẩm");
@@ -342,6 +348,12 @@ $(function () {
         filteredProducts = allProducts.filter(function (p) { return p.category === urlCategory; });
       } else if (urlNew === "true") {
         filteredProducts = allProducts.filter(function (p) { return p.isNew; });
+      } else if (urlSearch) {
+        var term = urlSearch.toLowerCase();
+        filteredProducts = allProducts.filter(function (p) {
+          return p.name_vi.toLowerCase().indexOf(term) !== -1 ||
+                 p.category.toLowerCase().indexOf(term) !== -1;
+        });
       } else {
         filteredProducts = allProducts.slice();
       }
