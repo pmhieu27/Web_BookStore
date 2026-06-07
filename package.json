@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "tailwindcss -c config/tailwind.config.js -i src/css/input.css -o src/css/output.css --watch",
-    "build": "tailwindcss -c config/tailwind.config.js -i src/css/input.css -o src/css/output.css --minify",
+    "build": "tailwindcss -c config/tailwind.config.js -i src/css/input.css -o src/css/output.css",
     "start": "browser-sync start --server --port 3005 --files \"**/*.html,src/css/**/*.css,src/js/**/*.js\" --no-notify --no-inject-changes"
   },
   "keywords": [],
