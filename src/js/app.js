@@ -70,7 +70,7 @@ $(async function () {
       page: "product-detail",
     },
     "checkout.html": {
-      modules: ["cart", "toast"],
+      modules: ["cart", "wishlist", "toast"],
       page: "checkout",
     },
     "wishlist.html": {
@@ -78,19 +78,19 @@ $(async function () {
       page: "wishlist-page",
     },
     "about.html": {
-      modules: ["parallax", "luxury-scroll"],
+      modules: ["parallax", "luxury-scroll", "cart", "wishlist", "toast"],
       page: "about",
     },
     "services.html": {
-      modules: ["parallax", "accordion"],
+      modules: ["parallax", "accordion", "cart", "wishlist", "toast"],
       page: null,
     },
     "contact.html": {
-      modules: ["accordion", "toast"],
+      modules: ["accordion", "toast", "cart", "wishlist"],
       page: "contact",
     },
     "account.html": {
-      modules: ["tabs"],
+      modules: ["tabs", "cart", "wishlist", "toast"],
       page: null,
     },
   };
