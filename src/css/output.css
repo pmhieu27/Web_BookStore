@@ -1775,6 +1775,9 @@ video {
 
 .bg-gold-light\/30 {
   background-color: rgb(232 213 176 / 0.3);
+.bg-gold-light {
+  --tw-bg-opacity: 1;
+  background-color: rgb(232 213 176 / var(--tw-bg-opacity, 1));
 }
 
 .bg-gradient-to-t {
@@ -2070,16 +2073,16 @@ video {
   padding-top: 10rem;
 }
 
-.pt-5 {
-  padding-top: 1.25rem;
-}
-
 .pt-6 {
   padding-top: 1.5rem;
 }
 
 .pt-8 {
   padding-top: 2rem;
+}
+
+.pt-5 {
+  padding-top: 1.25rem;
 }
 
 .text-left {
@@ -2267,10 +2270,6 @@ video {
   letter-spacing: 0.15em;
 }
 
-.tracking-\[0\.28em\] {
-  letter-spacing: 0.28em;
-}
-
 .tracking-\[0\.2em\] {
   letter-spacing: 0.2em;
 }
@@ -2297,6 +2296,10 @@ video {
 
 .tracking-widest {
   letter-spacing: 0.1em;
+}
+
+.tracking-\[0\.28em\] {
+  letter-spacing: 0.28em;
 }
 
 .text-\[\#A38A5F\] {
@@ -2455,6 +2458,10 @@ video {
 
 .opacity-40 {
   opacity: 0.4;
+}
+
+.opacity-60 {
+  opacity: 0.6;
 }
 
 .shadow-2xl {
@@ -3117,6 +3124,14 @@ video {
   .md\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
+  }
+
+  .md\:text-\[13px\] {
+    font-size: 13px;
+  }
+
+  .md\:text-\[17px\] {
+    font-size: 17px;
   }
 
   .md\:\[grid-template-columns\:4fr_6fr\] {
