@@ -695,8 +695,6 @@ video {
 
 .right-6 {
   right: 1.5rem;
-.right-6 {
-  right: 1.5rem;
 }
 
 .top-0 {
@@ -864,16 +862,8 @@ video {
   margin-right: 0.375rem;
 }
 
-.mr-2 {
-  margin-right: 0.5rem;
-}
-
 .mt-1 {
   margin-top: 0.25rem;
-}
-
-.mt-10 {
-  margin-top: 2.5rem;
 }
 
 .mt-12 {
@@ -966,10 +956,6 @@ video {
   aspect-ratio: 1 / 1;
 }
 
-.aspect-video {
-  aspect-ratio: 16 / 9;
-}
-
 .h-10 {
   height: 2.5rem;
 }
@@ -1000,10 +986,6 @@ video {
 
 .h-5 {
   height: 1.25rem;
-}
-
-.h-60 {
-  height: 15rem;
 }
 
 .h-60 {
@@ -1138,10 +1120,6 @@ video {
   max-width: 56rem;
 }
 
-.max-w-4xl {
-  max-width: 56rem;
-}
-
 .max-w-5xl {
   max-width: 64rem;
 }
@@ -1190,11 +1168,6 @@ video {
 
 .-translate-y-1\/2 {
   --tw-translate-y: -50%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.-translate-y-2 {
-  --tw-translate-y: -0.5rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1472,6 +1445,11 @@ video {
   border-radius: 16px;
 }
 
+.rounded-b-lg {
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
 .border {
   border-width: 1px;
 }
@@ -1504,6 +1482,10 @@ video {
 
 .border-t {
   border-top-width: 1px;
+}
+
+.border-t-0 {
+  border-top-width: 0px;
 }
 
 .border-none {
@@ -1807,9 +1789,6 @@ video {
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
 }
 
 .px-6 {
@@ -2069,10 +2048,6 @@ video {
   font-size: 18px;
 }
 
-.text-\[18px\] {
-  font-size: 18px;
-}
-
 .text-\[20px\] {
   font-size: 20px;
 }
@@ -2219,11 +2194,6 @@ video {
 .text-gold {
   --tw-text-opacity: 1;
   color: rgb(201 169 110 / var(--tw-text-opacity, 1));
-}
-
-.text-gold-dark {
-  --tw-text-opacity: 1;
-  color: rgb(166 139 91 / var(--tw-text-opacity, 1));
 }
 
 .text-gold-dark {
@@ -2707,8 +2677,6 @@ video {
 
   .md\:mt-0 {
     margin-top: 0px;
-  .md\:mt-0 {
-    margin-top: 0px;
   }
 
   .md\:block {
@@ -2741,16 +2709,10 @@ video {
 
   .md\:w-\[500px\] {
     width: 500px;
-  .md\:w-\[500px\] {
-    width: 500px;
   }
 
   .md\:w-\[800px\] {
     width: 800px;
-  }
-
-  .md\:grid-cols-1 {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 
   .md\:grid-cols-2 {
@@ -2785,10 +2747,6 @@ video {
     gap: 3rem;
   }
 
-  .md\:gap-16 {
-    gap: 4rem;
-  }
-
   .md\:gap-6 {
     gap: 1.5rem;
   }
@@ -2817,9 +2775,6 @@ video {
     padding: 1.25rem;
   }
 
-  .md\:px-0 {
-    padding-left: 0px;
-    padding-right: 0px;
   .md\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
@@ -2870,18 +2825,11 @@ video {
     padding-bottom: 7rem;
   }
 
-  .md\:py-36 {
-    padding-top: 9rem;
-    padding-bottom: 9rem;
-  }
-
   .md\:py-8 {
     padding-top: 2rem;
     padding-bottom: 2rem;
   }
 
-  .md\:pb-10 {
-    padding-bottom: 2.5rem;
   .md\:pb-10 {
     padding-bottom: 2.5rem;
   }
@@ -2900,11 +2848,6 @@ video {
 
   .md\:text-center {
     text-align: center;
-  }
-
-  .md\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
   }
 
   .md\:text-2xl {
@@ -2990,11 +2933,6 @@ video {
     margin-right: 5rem;
   }
 
-  .lg\:mx-20 {
-    margin-left: 5rem;
-    margin-right: 5rem;
-  }
-
   .lg\:mb-14 {
     margin-bottom: 3.5rem;
   }
@@ -3070,9 +3008,6 @@ video {
   .lg\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
-  .lg\:px-0 {
-    padding-left: 0px;
-    padding-right: 0px;
   }
 
   .lg\:px-20 {
@@ -3098,9 +3033,6 @@ video {
   .lg\:py-12 {
     padding-top: 3rem;
     padding-bottom: 3rem;
-  .lg\:py-12 {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
   }
 
   .lg\:py-20 {
@@ -3111,17 +3043,10 @@ video {
   .lg\:py-28 {
     padding-top: 7rem;
     padding-bottom: 7rem;
-  .lg\:py-28 {
-    padding-top: 7rem;
-    padding-bottom: 7rem;
   }
 
   .lg\:pt-40 {
     padding-top: 10rem;
-  }
-
-  .lg\:text-left {
-    text-align: left;
   }
 
   .lg\:text-left {
