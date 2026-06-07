@@ -291,3 +291,106 @@
 .btn-shine:hover::after {
   left: 100%;
 }
+.vane-zigzag-btn .zigzag-line {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  transition: stroke-dashoffset 1.2s linear;
+}
+
+.vane-zigzag-btn:hover .zigzag-line {
+  stroke-dashoffset: 0;
+}
+
+.vane-zigzag-btn:not(:hover) .zigzag-line {
+  stroke-dashoffset: 600;
+  transition: stroke-dashoffset 0.4s linear; 
+}
+/* --- PHOM NÚT BẤM HÌNH THOI --- */
+.diamond-btn {
+  width: 24px !important;
+  height: 24px !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  border: none !important;
+  cursor: pointer;
+  position: relative;
+  background: none !important;
+  z-index: 1;
+  border-radius: 4px !important;
+  transform: rotate(45deg);
+  transition: all 0.3s ease;
+}
+
+
+/* HIỆU ỨNG NỀN MẮT MÈO (Dùng linear-gradient tạo vệt sáng chéo) */
+/* Nút Giỏ hàng */
+.add-to-cart-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 4px !important;
+  z-index: -1;
+  background: linear-gradient(
+    135deg,
+    #121212 0%,
+    #121212 40%,
+    #ffffff 50%,
+    #121212 60%,
+    #121212 100%
+  ) !important;
+  background-size: 300% 300% !important; /* Phóng to để tạo độ mượt khi chuyển động */
+  background-position: 50% 50%;
+ 
+ 
+  transition: background-position 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+.add-to-cart-btn svg { color: #FFFFFF !important; }
+
+
+/* Nút Yêu thích */
+.toggle-wishlist-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 4px !important;
+  z-index: -1;
+  background: linear-gradient(
+    135deg,
+    #FAF8F5 0%,
+    #FAF8F5 40%,
+    #EAE6DF 50%,
+    #FAF8F5 60%,
+    #FAF8F5 100%
+  ) !important;
+  background-size: 300% 300% !important;
+  background-position: 50% 50%;
+ 
+  transition: background-position 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+.toggle-wishlist-btn svg { color: #0A0A0A !important; }
+
+
+
+
+/* --- HIỆU ỨNG TƯƠNG TÁC HOVER --- */
+.diamond-btn:hover {
+  transform: rotate(45deg) translateY(-2px) scale(1.05);
+  filter: drop-shadow(0 4px 12px rgba(10, 10, 10, 0.15));
+}
+
+
+.diamond-btn:hover::after {
+  background-position: 100% 100% !important;
+}
+
+
+/* ĐIỀU CHỈNH VÀ XOAY NGƯỢC ICON */
+.diamond-btn svg {
+  width: 11px !important;  
+  height: 11px !important;
+  transition: all 0.3s ease;
+  z-index: 2;
+  transform: rotate(-45deg);
+}
