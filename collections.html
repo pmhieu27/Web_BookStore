@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="src/css/custom.css?v=30" />
   </head>
   <body class="bg-ivory text-charcoal font-sans opacity-0 transition-opacity duration-500">
-    <div id="loader" class="fixed inset-0 z-200 bg-ivory flex items-center justify-center">
+    <div id="loader" class="z-200 bg-ivory fixed inset-0 flex items-center justify-center">
       <div class="font-logo text-2xl tracking-[0.4em]">VANE</div>
     </div>
 
@@ -22,11 +22,11 @@
 
     <main>
       <!-- ══════════ BREADCRUMB + PAGE TITLE ══════════ -->
-      <section class="border-silver-light/50 border-b bg-ivory pb-10 pt-40">
+      <section class="border-silver-light/50 bg-ivory border-b pb-10 pt-20 md:pt-32 lg:pt-40">
         <div class="mx-auto max-w-[1440px] px-8">
           <!-- Breadcrumb -->
-          <nav class="mb-8">
-            <ol class="font-ui text-muted flex items-center gap-2 text-[13px] tracking-wider">
+          <nav class="mb-8 md:px-20">
+            <ol class="font-ui text-muted flex items-center gap-2 text-[11px] tracking-wider md:text-[13px]">
               <li>
                 <a href="index.html" class="hover:text-primary transition-colors">Trang Chủ</a>
               </li>
@@ -297,7 +297,7 @@
                 <!-- Reset -->
                 <button
                   id="filter-reset"
-                  class="mt-6 w-full py-2.5 font-ui text-[10px] uppercase tracking-widest text-muted border border-silver-light hover:text-primary hover:border-charcoal transition-colors cursor-pointer"
+                  class="font-ui text-muted border-silver-light hover:text-primary hover:border-charcoal mt-6 w-full cursor-pointer border py-2.5 text-[10px] uppercase tracking-widest transition-colors"
                 >
                   Xóa Bộ Lọc
                 </button>
@@ -357,9 +357,9 @@
                 </div>
               </div>
               <!-- Empty state -->
-              <div id="products-empty" class="hidden text-center py-20">
-                <p class="font-serif text-2xl text-muted mb-3">Không tìm thấy sản phẩm</p>
-                <p class="font-ui text-sm text-muted/60">Vui lòng thử lại với bộ lọc khác.</p>
+              <div id="products-empty" class="hidden py-20 text-center">
+                <p class="text-muted mb-3 font-serif text-2xl">Không tìm thấy sản phẩm</p>
+                <p class="font-ui text-muted/60 text-sm">Vui lòng thử lại với bộ lọc khác.</p>
               </div>
               <!-- Empty state -->
               <div id="products-empty" class="hidden py-20 text-center">

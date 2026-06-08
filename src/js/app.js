@@ -25,9 +25,10 @@ $(async function () {
     }, 600);
   };
 
-  // Load a single JS file (cached)
+  // Load a single JS file with version to bust cache
   var loadScript = function (src) {
-    return $.ajax({ url: src, dataType: "script", cache: true });
+    var version = "32"; // Central version for all modules & pages
+    return $.ajax({ url: src + "?v=" + version, dataType: "script", cache: true });
   };
 
   // Load multiple scripts in sequence

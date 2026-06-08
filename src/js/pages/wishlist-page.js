@@ -52,14 +52,13 @@ $(function () {
           priceMobileHtml = '<span class="text-primary font-ui text-xs">' + formatPrice(p.price) + '</span>';
         }
 
-        html += '<div class="flex items-center justify-between bg-white py-6 px-2 md:px-4 border-b border-silver-light/30 last:border-none hover:bg-ivory/20 transition-all duration-300 gap-6 md:gap-10">' +
+        html += '<div class="flex items-center justify-between bg-white py-4 md:py-6 px-2 md:px-4 border-b border-silver-light/30 last:border-none hover:bg-ivory/20 transition-all duration-300 gap-3 md:gap-10">' +
           // Left: Image + Name & Category
-          '<div class="flex items-center gap-4 md:gap-6 flex-1 min-w-0">' +
+          '<div class="flex items-center gap-3 md:gap-6 flex-1 min-w-0">' +
             '<a href="product-detail.html?id=' + p.id + '" class="block shrink-0">' +
               '<img src="' + p.images[0] + '" alt="' + p.name_vi + '" class="w-16 h-20 md:w-20 md:h-26 object-cover border border-silver-light/20 transition-transform duration-500 hover:scale-105">' +
             '</a>' +
             '<div class="min-w-0">' +
-              '<p class="font-ui text-[9px] md:text-[10px] uppercase tracking-widest text-gold mb-1">' + catName + '</p>' +
               '<a href="product-detail.html?id=' + p.id + '" class="block">' +
                 '<h3 class="font-serif text-base md:text-lg text-primary hover:text-gold transition-colors truncate leading-tight">' + p.name_vi + '</h3>' +
               '</a>' +
@@ -72,10 +71,19 @@ $(function () {
             '<div>' + priceHtml + '</div>' +
           '</div>' +
           // Right: Action buttons
-          '<div class="flex items-center justify-end gap-3 md:gap-5 shrink-0 w-[220px]">' +
-            '<button class="add-to-cart-from-wishlist btn-primary py-2.5 px-4 md:px-6 text-[10px] md:text-xs font-semibold tracking-widest uppercase cursor-pointer" data-id="' + p.id + '">' +
-              'Thêm Vào Giỏ' +
-            '</button>' +
+          '<div class="flex items-center justify-end gap-2 md:gap-5 shrink-0 w-auto md:w-[220px]">' +
+            // Desktop add-to-cart button
+            '<div class="hidden md:block">' +
+              '<button class="add-to-cart-from-wishlist btn-primary py-2.5 px-4 md:px-6 text-[10px] md:text-xs font-semibold tracking-widest uppercase cursor-pointer" data-id="' + p.id + '">' +
+                'Thêm Vào Giỏ' +
+              '</button>' +
+            '</div>' +
+            // Mobile add-to-cart button (giỏ hàng nền đen)
+            '<div class="block md:hidden">' +
+              '<button class="add-to-cart-from-wishlist bg-primary text-white p-2.5 hover:bg-gold transition-colors duration-300 cursor-pointer flex items-center justify-center shrink-0" data-id="' + p.id + '" title="Thêm vào giỏ">' +
+                '<svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>' +
+              '</button>' +
+            '</div>' +
             '<button class="remove-wishlist-btn text-muted hover:text-red-500 transition-colors p-2 cursor-pointer" data-id="' + p.id + '" title="Xóa khỏi yêu thích">' +
               '<svg class="w-5 h-5 md:w-5.5 md:h-5.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M10 11v6M14 11v6"/></svg>' +
             '</button>' +

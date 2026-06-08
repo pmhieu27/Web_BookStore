@@ -148,16 +148,20 @@ $(function () {
         '" data-size="' +
         (size || "") +
         '">' +
+        '<a href="product-detail.html?id=' + item.id + '" class="block shrink-0">' +
         '<img src="' +
         item.image +
         '" alt="' +
         item.name +
-        '" class="cart-item-img">' +
+        '" class="cart-item-img hover:opacity-80 transition-opacity duration-300">' +
+        '</a>' +
         '<div class="flex-1 flex flex-col justify-between">' +
         "<div>" +
-        '<p class="font-ui text-sm font-medium text-primary">' +
+        '<a href="product-detail.html?id=' + item.id + '" class="block hover:text-gold transition-colors duration-300">' +
+        '<p class="font-ui text-sm font-medium text-primary hover:text-gold transition-colors duration-300">' +
         item.name +
         "</p>" +
+        '</a>' +
         '<p class="font-ui text-xs text-muted mt-1">Size: ' +
         (size || "—") +
         "</p>" +

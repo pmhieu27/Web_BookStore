@@ -125,9 +125,8 @@ $(function () {
             '<img src="' + p.images[0] + '" alt="' + p.name_vi + '" class="w-full aspect-[3/4] object-cover transition-transform duration-500 group-hover:scale-105">' +
           '</div>' +
           '<div class="text-left">' +
-            '<p class="font-ui text-[9px] uppercase tracking-wider text-gold mb-0.5">' + categoryName + '</p>' +
-            '<h4 class="font-serif text-sm text-primary group-hover:text-gold transition-colors truncate mb-1">' + p.name_vi + '</h4>' +
-            '<p class="font-ui text-[11px] text-charcoal">' + priceText + '</p>' +
+            '<h4 class="font-serif text-[16px] text-primary group-hover:text-gold transition-colors truncate mb-1">' + p.name_vi + '</h4>' +
+            '<p class="font-ui text-[14px] text-charcoal">' + priceText + '</p>' +
           '</div>' +
         '</a>';
       });
