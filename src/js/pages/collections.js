@@ -128,6 +128,24 @@ $(function () {
       return;
     }
 
+    if (urlSearch && !category) {
+      $plainTitleRow.css("display", "flex");
+      $("#shop-header-filter").show();
+      $("#shop-toolbar-filter").show();
+      $("#shop-products-container").show();
+      $("#lookbook-design-space").hide();
+      return;
+    }
+
+    if (urlCategory && !category) {
+      $plainTitleRow.css("display", "flex");
+      $("#shop-header-filter").show();
+      $("#shop-toolbar-filter").show();
+      $("#shop-products-container").show();
+      $("#lookbook-design-space").hide();
+      return;
+    }
+
     $plainTitleRow.css("display", "none");
     $("#shop-header-filter").hide();
     $("#shop-toolbar-filter").hide();
@@ -453,21 +471,22 @@ $(function () {
     applyFilters();
   });
 
-  $(document).on("change", "#filter-sidebar input[type='checkbox']", applyFilters);
+  $(document).on("change", "#filter-sidebar input[type='checkbox'], #mobile-filter-panel input[type='checkbox']", applyFilters);
 
-  $(document).on("input", "#price-range", function () {
+  $(document).on("input", "#price-range, #mobile-price-range", function () {
     var value = parseInt($(this).val(), 10) || 0;
 
-    $("#price-range-value").text(formatPrice(value));
+    $("#price-range, #mobile-price-range").val(value);
+    $("#price-range-value, #mobile-price-range-value").text(formatPrice(value));
     applyFilters();
   });
 
   $(document).on("change", "#sort-select", applyFilters);
 
-  $(document).on("click", "#filter-reset", function () {
+  $(document).on("click", "#filter-reset, #mobile-filter-reset", function () {
     $("#filter-sidebar input[type='checkbox'], #mobile-filter-panel input[type='checkbox']").prop("checked", false);
-    $("#price-range").val(50000000);
-    $("#price-range-value").text("50.000.000₫");
+    $("#price-range, #mobile-price-range").val(50000000);
+    $("#price-range-value, #mobile-price-range-value").text("50.000.000₫");
     $(".filter-pill").removeClass("active");
     $('.filter-pill[data-category="all"]').addClass("active");
     currentCategory = null;
@@ -527,23 +546,27 @@ $(function () {
 
   $(document).on("click", "#filter-toggle-btn", function () {
     $("#mobile-filter-overlay").addClass("active");
+    $("#mobile-filter-panel").addClass("active");
     $("body").css("overflow", "hidden");
   });
 
   $(document).on("click", "#mobile-filter-close", function () {
     $("#mobile-filter-overlay").removeClass("active");
+    $("#mobile-filter-panel").removeClass("active");
     $("body").css("overflow", "");
   });
 
   $(document).on("click", "#mobile-filter-apply", function () {
     applyFilters();
     $("#mobile-filter-overlay").removeClass("active");
+    $("#mobile-filter-panel").removeClass("active");
     $("body").css("overflow", "");
   });
 
   $(document).on("click", "#mobile-filter-overlay", function (event) {
     if ($(event.target).is("#mobile-filter-overlay")) {
-      $(this).removeClass("active");
+      $("#mobile-filter-overlay").removeClass("active");
+      $("#mobile-filter-panel").removeClass("active");
       $("body").css("overflow", "");
     }
   });

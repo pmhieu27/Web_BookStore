@@ -27,7 +27,7 @@ $(async function () {
 
   // Load a single JS file with version to bust cache
   var loadScript = function (src) {
-    var version = "32"; // Central version for all modules & pages
+    var version = "35"; // Central version for all modules & pages
     return $.ajax({ url: src + "?v=" + version, dataType: "script", cache: true });
   };
 
